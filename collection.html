@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Collection | Ghazaal Exclusive Abaya</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <img class="loader-mark" src="./Images/Gazala Logo.png" alt="ARC Stack Web Studio logo">
+        <div class="loader-line"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img class="Gazala-Logo" src="./Images/Gazala Logo.png" alt="">
+                Ghazaal Exclusive Abaya
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="collection.html">Collection</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li> -->
+
+                    <li class="nav-item"><a class="nav-link nav-cta" href="/contact.html">Book Visit</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Page Hero -->
+
+    <section class="hero-section">
+        <div class="container">
+
+            <div class="row align-items-center min-vh-100">
+
+                <div class="col-lg-6" data-aos="fade-right">
+
+                    <h1 class="display-3 fw-bold">
+                        Our Luxury Collection
+                    </h1>
+
+                    <p class="lead">
+                        Premium Abayas, Burqas & Hijabs
+                    </p>
+
+                    <p>
+                        Discover luxury Abayas, Burqas and Islamic Fashion crafted with elegance,
+                        comfort and premium quality fabrics.
+                    </p>
+
+                    <a href="#collection" class="btn btn-gold me-3">
+                        Shop Collection
+                    </a>
+
+                    <a href="https://wa.me/919769443142" class="btn btn-success">
+                        WhatsApp Order
+                    </a>
+
+                </div>
+
+                <div class="col-lg-6 text-center" data-aos="fade-left">
+
+                    <img src="./Images/Collection-Abayas.png" class="img-fluid hero-img Collection-Abayas-Img"
+                        alt="Ghazaal Exclusive Abaya">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Categories -->
+
+    <section class="section-padding">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2>Shop By Category</h2>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="collection-card">
+                        <h4>Dubai Abayas</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="collection-card">
+                        <h4>Party Wear</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="collection-card">
+                        <h4>Bridal Collection</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="collection-card">
+                        <h4>Daily Wear</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="collection-card">
+                        <h4>Designer Hijabs</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="collection-card">
+                        <h4>Premium Burqas</h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Products -->
+
+    <section class="section-padding bg-dark-section">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2>Featured Products</h2>
+
+            </div>
+
+            <div class="row g-4" id="productList"></div>
+
+        </div>
+
+    </section>
+
+    <!-- Trust Section -->
+
+    <section class="section-padding">
+
+        <div class="container">
+
+            <div class="row text-center">
+
+                <div class="col-md-3">
+
+                    <h2>1000+</h2>
+                    <p>Happy Customers</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2>500+</h2>
+                    <p>Luxury Designs</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2>4.5</h2>
+                    <p>Google Rating</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2>24/7</h2>
+                    <p>Customer Support</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WhatsApp CTA -->
+
+    <section class="whatsapp-banner">
+
+        <!-- <div class="container text-center">
+
+            <h2>
+                Order Directly On WhatsApp
+            </h2>
+
+            <p>
+                Fast Response â€¢ Custom Stitching â€¢ Premium Quality
+            </p>
+
+            <a href="https://wa.me/919769443142" class="btn btn-success btn-lg">
+
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp Order
+
+            </a>
+
+        </div> -->
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <div class="container text-center">
+
+            <h4>Ghazaal Exclusive Abaya</h4>
+
+            <p>Luxury Islamic Fashion</p>
+
+            <p>
+                Sharifa Manzil,
+                30 Thane Road,
+                Near Dhange Hospital,
+                Bhiwandi - 421308
+            </p>
+
+            <p>
+                +91 9769443142
+            </p>
+
+            <p>
+                Â© 2025 All Rights Reserved
+            </p>
+
+        </div>
+
+    </footer>
+
+    <a href="https://wa.me/919769443142" class="whatsapp-float">
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/product-pages.js"></script>
+
+</body>
+
+</html>
