@@ -20,6 +20,19 @@ function renderCollection() {
     if (productList) productList.innerHTML = products.map(renderProductCard).join("");
 }
 
+function renderSizeDetails(size) {
+    const sizeCharts = window.sizeCharts || {};
+    const selectedSize = sizeCharts[size] || sizeCharts.L;
+
+    return `
+        <div class="mt-4 p-3 rounded border border-secondary">
+            <h6 class=" mb-3">${selectedSize.title}</h6>
+            <div class="small">
+                ${selectedSize.measurements.map(item => `<div class="mb-1">${item.label}:- ${item.value}</div>`).join("")}
+            </div>
+        </div>`;
+}
+
 function renderProductDetails() {
     const detailsContainer = document.getElementById("productDetails");
     if (!detailsContainer) return;
@@ -41,18 +54,25 @@ function renderProductDetails() {
         <div class="col-lg-6"><img src="${product.image}" class="img-fluid rounded shadow-lg" alt="${product.name}"></div>
         <div class="col-lg-6">
             ${product.badge ? `<span class="badge bg-warning text-dark mb-3">${product.badge}</span>` : ""}
-            <h1 class="mb-3">${product.name}</h1><h2 style="color:#D4AF37;">${formatPrice(product.price)}</h2>
+            <h1 class="mb-3">${product.name}</h1><h2 style="color:#b18e1e;">${formatPrice(product.price)}</h2>
             <p>${product.description}</p><hr><h5>Fabric Details</h5><ul>${product.fabricDetails.map(detail => `<li>${detail}</li>`).join("")}</ul><hr>
-            <h5>Select Size</h5><div class="mb-4" id="sizeOptions">${["S", "M", "L", "XL", "XXL"].map(size => `<button type="button" class="btn btn-outline-light me-2 mb-2" data-size="${size}">${size}</button>`).join("")}</div>
-            <a id="whatsAppOrder" href="${getWhatsAppUrl(product)}" class="btn btn-success btn-lg me-3" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order On WhatsApp</a>
-            <a href="collection.html" class="btn btn-gold btn-lg">Back To Collection</a>
+            <h5>Select Size</h5><div class="mb-4" id="sizeOptions">${["L", "XL", "XXL"].map(size => `<button type="button" class="btn btn-outline-light me-2 mb-2" data-size="${size}">${size}</button>`).join("")}</div>
+            <div id="sizeDetails"></div>
+            <a id="whatsAppOrder" href="${getWhatsAppUrl(product)}" class="btn btn-success btn-lg me-3 mt-3" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order On WhatsApp</a>
+            <a href="collection.html" class="btn btn-gold btn-lg mt-3">Back To Collection</a>
         </div>`;
 
+    const updateSizeSelection = (selectedSize) => {
+        document.querySelectorAll("[data-size]").forEach(item => item.classList.toggle("active", item.dataset.size === selectedSize));
+        document.getElementById("whatsAppOrder").href = getWhatsAppUrl(product, selectedSize);
+        document.getElementById("sizeDetails").innerHTML = renderSizeDetails(selectedSize);
+    };
+
     document.querySelectorAll("[data-size]").forEach(button => button.addEventListener("click", () => {
-        document.querySelectorAll("[data-size]").forEach(item => item.classList.remove("active"));
-        button.classList.add("active");
-        document.getElementById("whatsAppOrder").href = getWhatsAppUrl(product, button.dataset.size);
+        updateSizeSelection(button.dataset.size);
     }));
+
+    updateSizeSelection("L");
 
     if (relatedProducts) {
         relatedProducts.innerHTML = products.filter(item => item.id !== product.id).map(renderProductCard).join("");

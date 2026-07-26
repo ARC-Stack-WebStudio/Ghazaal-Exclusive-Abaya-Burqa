@@ -8,12 +8,63 @@ const products = [
 
 const whatsappNumber = "919769443142";
 
+const sizeCharts = {
+    L: {
+        title: "L SIZE",
+        measurements: [
+            { label: "Length", value: "54 TO 56" },
+            { label: "Shoulder", value: "15 TO 16" },
+            { label: "Sleeves", value: "23" },
+            { label: "Chest", value: "40 TO 46" },
+            { label: "West", value: "38 TO 44" },
+            { label: "Hip", value: "46 TO 52" }
+        ]
+    },
+    XL: {
+        title: "XL SIZE",
+        measurements: [
+            { label: "Length", value: "56 TO 58" },
+            { label: "Shoulder", value: "17 TO 18" },
+            { label: "Sleeves", value: "22 TO 24" },
+            { label: "Chest", value: "48 TO 54" },
+            { label: "West", value: "48 TO 54" },
+            { label: "Hip", value: "54 TO 60" }
+        ]
+    },
+    XXL: {
+        title: "XXL SIZE",
+        measurements: [
+            { label: "Length", value: "58" },
+            { label: "Shoulder", value: "20" },
+            { label: "Sleeves", value: "24" },
+            { label: "Chest", value: "58" },
+            { label: "West", value: "58" },
+            { label: "Hip", value: "64" }
+        ]
+    }
+};
+
+window.sizeCharts = sizeCharts;
+
 function formatPrice(price) {
     return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(price);
 }
 
 function getWhatsAppUrl(product, size) {
-    const sizeText = size ? ` in size ${size}` : "";
-    const message = `I want to order ${product.name} for ${formatPrice(product.price)}${sizeText}`;
+    let message = `I want to order ${product.name} for ${formatPrice(product.price)}`;
+
+    if (size) {
+        message += ` in size ${size}`;
+
+        const selectedSize = sizeCharts[size];
+        if (selectedSize) {
+            const measurementsText = selectedSize.measurements
+                .map(item => `${item.label}:- ${item.value}`)
+                .join("\n");
+
+            message += `\n\n${selectedSize.title}\n${measurementsText}`;
+        }
+    }
+
     return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
