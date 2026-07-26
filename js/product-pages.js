@@ -8,7 +8,7 @@ function renderProductCard(product) {
                 </div>
                 <div><h5>${product.name}</h5><p>${formatPrice(product.price)}</p></div>
                 <div class="p-3 pt-0">
-                    <a href="${getWhatsAppUrl(product)}" class="btn btn-success w-100 mb-2" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order Now</a>
+                    <a href="addorder.html?id=${product.id}" class="btn btn-success w-100 mb-2"><i class="fas fa-shopping-cart"></i> Continue Order</a>
                     <a href="product-details.html?id=${product.id}" class="btn btn-gold w-100">Quick View</a>
                 </div>
             </article>
@@ -58,21 +58,32 @@ function renderProductDetails() {
             <p>${product.description}</p><hr><h5>Fabric Details</h5><ul>${product.fabricDetails.map(detail => `<li>${detail}</li>`).join("")}</ul><hr>
             <h5>Select Size</h5><div class="mb-4" id="sizeOptions">${["L", "XL", "XXL"].map(size => `<button type="button" class="btn btn-outline-light me-2 mb-2" data-size="${size}">${size}</button>`).join("")}</div>
             <div id="sizeDetails"></div>
-            <a id="whatsAppOrder" href="${getWhatsAppUrl(product)}" class="btn btn-success btn-lg me-3 mt-3" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Order On WhatsApp</a>
+            <a id="continueOrder" href="addorder.html?id=${product.id}" class="btn btn-success btn-lg me-3 mt-3"><i class="fas fa-shopping-cart"></i> Continue Order</a>
             <a href="collection.html" class="btn btn-gold btn-lg mt-3">Back To Collection</a>
         </div>`;
 
-    const updateSizeSelection = (selectedSize) => {
+    let selectedSize = "";
+    const continueOrder = document.getElementById("continueOrder");
+
+    const updateSizeSelection = (size) => {
+        selectedSize = size;
         document.querySelectorAll("[data-size]").forEach(item => item.classList.toggle("active", item.dataset.size === selectedSize));
-        document.getElementById("whatsAppOrder").href = getWhatsAppUrl(product, selectedSize);
         document.getElementById("sizeDetails").innerHTML = renderSizeDetails(selectedSize);
+
+        // Keep the selected size in the order-page URL so it can be pre-filled there.
+        continueOrder.href = `addorder.html?id=${encodeURIComponent(product.id)}&size=${encodeURIComponent(selectedSize)}`;
     };
 
     document.querySelectorAll("[data-size]").forEach(button => button.addEventListener("click", () => {
         updateSizeSelection(button.dataset.size);
     }));
 
-    updateSizeSelection("L");
+    continueOrder.addEventListener("click", (event) => {
+        if (!selectedSize) {
+            event.preventDefault();
+            window.alert("Please select a size before continuing your order.");
+        }
+    });
 
     if (relatedProducts) {
         relatedProducts.innerHTML = products.filter(item => item.id !== product.id).map(renderProductCard).join("");
