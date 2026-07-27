@@ -732,11 +732,19 @@ textarea {
 .footer {
     background: var(--heading);
     padding: 58px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
 }
 
 .footer h2 {
     color: var(--primary-gold);
     font-size: 2.4rem;
+}
+
+.Footer-Ghazaal{
+    color:var(--primary-gold) ;
 }
 
 .footer p {
@@ -746,6 +754,12 @@ textarea {
 
 .footer-points{
   color: var(--primary-dark);
+}
+
+.QR-Code img{
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
 }
 
 .whatsapp-float {
