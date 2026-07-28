@@ -572,6 +572,77 @@ h6 {
 }
 
 /* ===================================
+   PRODUCT DETAIL GALLERY
+=================================== */
+
+.product-gallery { width: 100%; }
+
+.product-gallery__viewport {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 20px 48px rgba(46, 43, 43, 0.16);
+}
+
+.product-gallery__track {
+    display: flex;
+    height: 100%;
+    transition: transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: transform;
+}
+
+.product-gallery__slide { flex: 0 0 100%; min-width: 0; }
+
+.product-gallery__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-gallery__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--heading);
+    box-shadow: 0 8px 22px rgba(46, 43, 43, 0.14);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.product-gallery__arrow:hover,
+.product-gallery__arrow:focus-visible { background: var(--primary-dark); color: var(--white); outline: none; }
+.product-gallery__arrow--previous { left: 18px; }
+.product-gallery__arrow--next { right: 18px; }
+
+.product-gallery__dots { display: flex; justify-content: center; gap: 8px; padding-top: 16px; }
+
+.product-gallery__dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(46, 43, 43, 0.28);
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+}
+
+.product-gallery__dot.is-active { width: 28px; background: var(--primary-dark); }
+.product-gallery__dot:focus-visible { outline: 2px solid var(--dark-gold); outline-offset: 3px; }
+
+/* ===================================
    SERVICES
 =================================== */
 
@@ -1320,4 +1391,12 @@ select.form-control {
         right: 18px;
         bottom: 18px;
     }
+
+    .product-gallery__arrow {
+        width: 42px;
+        height: 42px;
+    }
+
+    .product-gallery__arrow--previous { left: 12px; }
+    .product-gallery__arrow--next { right: 12px; }
 }
