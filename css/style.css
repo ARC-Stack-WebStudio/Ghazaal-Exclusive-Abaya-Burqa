@@ -119,13 +119,13 @@ h6 {
 }
 
 .loader-mark {
-  width: 350px;
+  width: 305px;
   height: 300px;
   aspect-ratio: 1;
   padding: clamp(22px, 5vw, 42px);
   object-fit: contain;
   object-position: center;
-  border-radius: 50%;
+  border-radius: 0% 50%;
   background: rgba(255, 255, 255, .04);
   border: 1px solid var(--primary-dark);
   box-shadow: 0 0 42px var(--primary-dark), 0 0 60px var(--primary);
