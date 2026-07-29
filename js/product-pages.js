@@ -37,7 +37,7 @@ function renderSizeDetails(size) {
 function getProductImages(product) {
     return Array.isArray(product.images) && product.images.length
         ? product.images
-        : [product.image, product.image, product.image];
+        : [product.image, product.imagetwo, product.imagethree];
 }
 
 function renderProductGallery(product) {
