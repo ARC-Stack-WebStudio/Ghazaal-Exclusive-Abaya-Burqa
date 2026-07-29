@@ -94,6 +94,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     }
 
+
+     const InstagramButton = document.querySelector(".instagram-float");
+
+    if (InstagramButton) {
+        setInterval(() => {
+            InstagramButton.style.transform = "scale(1.12)";
+
+            setTimeout(() => {
+                InstagramButton.style.transform = "scale(1)";
+            }, 500);
+        }, 3000);
+    }
+
+
     const loader = document.getElementById("loader");
 
     window.addEventListener("load", function () {
