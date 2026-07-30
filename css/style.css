@@ -524,6 +524,12 @@ h6 {
     box-shadow: var(--shadow-hover);
 }
 
+.collection-card img{
+    height: 500px;
+    width: 100%;
+    border-radius: 20px;
+}
+
 /* ===================================
    PRODUCTS
 =================================== */

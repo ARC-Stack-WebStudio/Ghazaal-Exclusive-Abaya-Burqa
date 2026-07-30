@@ -11,7 +11,7 @@
     }
 
     const selectedSize = urlParams.get("size");
-    const sizes = product.sizes || ["XS", "S", "M", "L", "XL", "XXL", "3XL"];
+    const sizes = product.sizes || [ "L", "XL", "XXL", "3XL"];
     const fabric = product.fabricDetails.join(", ");
     const category = product.category || (product.name.toLowerCase().includes("burqa") ? "Burqa" : "Abaya");
     const cityData = {
