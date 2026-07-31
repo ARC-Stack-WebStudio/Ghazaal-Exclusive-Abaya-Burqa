@@ -94,6 +94,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     }
 
+
+     const InstagramButton = document.querySelector(".instagram-float");
+
+    if (InstagramButton) {
+        setInterval(() => {
+            InstagramButton.style.transform = "scale(1.12)";
+
+            setTimeout(() => {
+                InstagramButton.style.transform = "scale(1)";
+            }, 500);
+        }, 3000);
+    }
+
+
     const loader = document.getElementById("loader");
 
     window.addEventListener("load", function () {
@@ -140,6 +154,94 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".current-year").forEach(item => {
         item.textContent = new Date().getFullYear();
     });
+
+    /* Instagram Reels: load the official embed only when a reel is opened. */
+    const reelModalElement = document.getElementById("instagramReelModal");
+    const reelEmbed = document.getElementById("instagramReelEmbed");
+    const reelTitle = document.getElementById("instagramReelModalTitle");
+    const reelDescription = document.getElementById("instagramReelModalDescription");
+    const reelExternalLink = document.getElementById("instagramReelExternalLink");
+
+    if (reelModalElement && reelEmbed && window.bootstrap) {
+        const reelModal = new bootstrap.Modal(reelModalElement, {
+            backdrop: true,
+            focus: true,
+            keyboard: true
+        });
+        let activeReelUrl = "";
+        let loadingWatcher;
+
+        const loadInstagramEmbedScript = () => new Promise((resolve, reject) => {
+            if (window.instgrm && window.instgrm.Embeds) {
+                resolve();
+                return;
+            }
+
+            const existingScript = document.querySelector('script[data-instagram-embed="true"]');
+            if (existingScript) {
+                existingScript.addEventListener("load", resolve, { once: true });
+                existingScript.addEventListener("error", reject, { once: true });
+                return;
+            }
+
+            const script = document.createElement("script");
+            script.src = "https://www.instagram.com/embed.js";
+            script.async = true;
+            script.dataset.instagramEmbed = "true";
+            script.onload = resolve;
+            script.onerror = reject;
+            document.body.appendChild(script);
+        });
+
+        const showReel = (card) => {
+            activeReelUrl = card.dataset.reelUrl;
+            reelTitle.textContent = card.dataset.reelTitle;
+            reelDescription.textContent = card.dataset.reelDescription;
+            reelExternalLink.href = activeReelUrl;
+            reelEmbed.innerHTML = '<div class="instagram-reel-modal__loader" aria-label="Loading Instagram Reel"><span class="spinner-border" aria-hidden="true"></span><span>Loading Reel</span></div>';
+            reelModal.show();
+        };
+
+        document.querySelectorAll(".instagram-reel-card").forEach((card) => {
+            card.addEventListener("click", () => showReel(card));
+            card.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    showReel(card);
+                }
+            });
+        });
+
+        reelModalElement.addEventListener("shown.bs.modal", () => {
+            if (!activeReelUrl) return;
+
+            window.clearInterval(loadingWatcher);
+
+            reelEmbed.innerHTML = '<div class="instagram-reel-modal__loader" aria-label="Loading Instagram Reel"><span class="spinner-border" aria-hidden="true"></span><span>Loading Reel</span></div>' +
+                '<blockquote class="instagram-media" data-instgrm-permalink="' + activeReelUrl + '" data-instgrm-version="14" aria-label="Instagram Reel"></blockquote>';
+
+            loadInstagramEmbedScript()
+                .then(() => window.instgrm.Embeds.process())
+                .catch(() => {
+                    reelEmbed.innerHTML = '<p class="instagram-reel-modal__description">This Reel could not be loaded. Please view it on Instagram.</p>';
+                });
+
+            loadingWatcher = window.setInterval(() => {
+                const iframe = reelEmbed.querySelector("iframe");
+                if (iframe) {
+                    const loader = reelEmbed.querySelector(".instagram-reel-modal__loader");
+                    if (loader) loader.remove();
+                    window.clearInterval(loadingWatcher);
+                }
+            }, 150);
+        });
+
+        reelModalElement.addEventListener("hidden.bs.modal", () => {
+            window.clearInterval(loadingWatcher);
+            reelEmbed.innerHTML = "";
+            activeReelUrl = "";
+        });
+    }
 
     const backToTop = document.createElement("button");
     backToTop.innerHTML = "&uarr;";

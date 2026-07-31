@@ -104,41 +104,41 @@ h6 {
 
 
 .loader {
-  position: fixed;
-  inset: 0;
-  z-index: 10000;
-  display: grid;
-  place-items: center;
-  background: var(--background);
-  transition: opacity .6s, visibility .6s;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    background: var(--background);
+    transition: opacity .6s, visibility .6s;
 }
 
 .loader.hidden {
-  opacity: 0;
-  visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .loader-mark {
-  width: 350px;
-  height: 300px;
-  aspect-ratio: 1;
-  padding: clamp(22px, 5vw, 42px);
-  object-fit: contain;
-  object-position: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, .04);
-  border: 1px solid var(--primary-dark);
-  box-shadow: 0 0 42px var(--primary-dark), 0 0 60px var(--primary);
-  animation: pulse 1.2s infinite alternate;
+    width: 305px;
+    height: 300px;
+    aspect-ratio: 1;
+    padding: clamp(22px, 5vw, 42px);
+    object-fit: contain;
+    object-position: center;
+    border-radius: 0% 50%;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid var(--primary-dark);
+    box-shadow: 0 0 42px var(--primary-dark), 0 0 60px var(--primary);
+    animation: pulse 1.2s infinite alternate;
 }
 
 .loader-line {
-  position: absolute;
-  width: min(260px, 60vw);
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--blue), var(--purple), transparent);
-  transform: translateY(78px);
-  animation: scan 1.2s infinite;
+    position: absolute;
+    width: min(260px, 60vw);
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue), var(--purple), transparent);
+    transform: translateY(78px);
+    animation: scan 1.2s infinite;
 }
 
 
@@ -170,7 +170,7 @@ h6 {
     padding: 9px 11px;
 }
 
-.navbar-brand .Gazala-Logo{
+.navbar-brand .Gazala-Logo {
     width: 50px;
     border-radius: 50px;
 }
@@ -288,7 +288,7 @@ h6 {
         linear-gradient(135deg, var(--background) 0%, var(--champagne) 52%, var(--white) 100%);
 }
 
-.contact-section{
+.contact-section {
     min-height: 80vh;
 }
 
@@ -377,7 +377,7 @@ h6 {
 .glass-note {
     position: absolute;
     left: -22px;
-    bottom: 34px;
+    bottom: 133px;
     min-width: 190px;
     padding: 18px 22px;
     background: rgba(255, 255, 255, 0.70);
@@ -524,6 +524,12 @@ h6 {
     box-shadow: var(--shadow-hover);
 }
 
+.collection-card img{
+    height: 500px;
+    width: 100%;
+    border-radius: 20px;
+}
+
 /* ===================================
    PRODUCTS
 =================================== */
@@ -569,6 +575,104 @@ h6 {
     color: var(--dark-gold);
     font-weight: 700;
     margin-bottom: 0;
+}
+
+/* ===================================
+   PRODUCT DETAIL GALLERY
+=================================== */
+
+.product-gallery {
+    width: 100%;
+}
+
+.product-gallery__viewport {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 20px 48px rgba(46, 43, 43, 0.16);
+}
+
+.product-gallery__track {
+    display: flex;
+    height: 100%;
+    transition: transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: transform;
+}
+
+.product-gallery__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+.product-gallery__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-gallery__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--heading);
+    box-shadow: 0 8px 22px rgba(46, 43, 43, 0.14);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.product-gallery__arrow:hover,
+.product-gallery__arrow:focus-visible {
+    background: var(--primary-dark);
+    color: var(--white);
+    outline: none;
+}
+
+.product-gallery__arrow--previous {
+    left: 18px;
+}
+
+.product-gallery__arrow--next {
+    right: 18px;
+}
+
+.product-gallery__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 16px;
+}
+
+.product-gallery__dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(46, 43, 43, 0.28);
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+}
+
+.product-gallery__dot.is-active {
+    width: 28px;
+    background: var(--primary-dark);
+}
+
+.product-gallery__dot:focus-visible {
+    outline: 2px solid var(--dark-gold);
+    outline-offset: 3px;
 }
 
 /* ===================================
@@ -732,6 +836,10 @@ textarea {
 .footer {
     background: var(--heading);
     padding: 58px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
 }
 
 .footer h2 {
@@ -739,13 +847,23 @@ textarea {
     font-size: 2.4rem;
 }
 
+.Footer-Ghazaal {
+    color: var(--primary-gold);
+}
+
 .footer p {
     color: rgba(255, 255, 255, 0.72);
     margin-bottom: 6px;
 }
 
-.footer-points{
-  color: var(--primary-dark);
+.footer-points {
+    color: var(--primary-dark);
+}
+
+.QR-Code img {
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
 }
 
 .whatsapp-float {
@@ -767,6 +885,30 @@ textarea {
 }
 
 .whatsapp-float:hover {
+    color: var(--white);
+    transform: translateY(-4px) scale(1.05);
+}
+
+.instagram-float {
+    position: fixed;
+    right: 100px;
+    bottom: 24px;
+    z-index: 9999;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #c524aa; */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #c524aa 60%, #285aeb 90%);
+    color: var(--white);
+    border-radius: 50%;
+    box-shadow: 0 18px 36px rgba(199, 35, 117, 0.28);
+    font-size: 1.85rem;
+    transition: var(--transition);
+}
+
+.instagram-float:hover {
     color: var(--white);
     transform: translateY(-4px) scale(1.05);
 }
@@ -815,7 +957,7 @@ textarea {
     border-radius: var(--radius-lg);
 }
 
-.Collection-Abayas-Img{
+.Collection-Abayas-Img {
     width: 700px;
     height: 400px;
 }
@@ -1169,7 +1311,7 @@ select.form-control {
         url('../Images/Ghazaal Banner.png') center / cover;
 }
 
-.whatsapp-banner > .container,
+.whatsapp-banner>.container,
 .cta-panel {
     border-radius: 18px;
 }
@@ -1305,6 +1447,280 @@ select.form-control {
         height: 56px;
         right: 18px;
         bottom: 18px;
+    }
+
+    .product-gallery__arrow {
+        width: 42px;
+        height: 42px;
+    }
+
+    .product-gallery__arrow--previous {
+        left: 12px;
+    }
+
+    .product-gallery__arrow--next {
+        right: 12px;
+    }
+}
+
+/* ===================================
+   INSTAGRAM REELS
+=================================== */
+.instagram-reels-section {
+    background: rgba(255, 255, 255, .18);
+}
+
+.instagram-reels-section .section-heading p {
+    max-width: 620px;
+    margin: 16px auto 0;
+}
+
+.instagram-reel-card {
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(213, 181, 135, .55);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, .38);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+    transition: var(--transition);
+}
+
+.instagram-reel-card:focus-visible {
+    outline: 3px solid rgba(205, 167, 109, .55);
+    outline-offset: 4px;
+}
+
+.instagram-reel-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-dark);
+    box-shadow: var(--shadow-hover), 0 0 0 3px rgba(213, 181, 135, .12);
+}
+
+.instagram-reel-card__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--deep-mulberry);
+}
+
+.instagram-reel-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.instagram-reel-card:hover .instagram-reel-card__media img {
+    transform: scale(1.08);
+}
+
+.instagram-reel-card__shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(46, 43, 43, .06) 25%, rgba(46, 43, 43, .6) 100%);
+}
+
+.instagram-reel-card__badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 10px;
+    border: 1px solid rgba(255, 255, 255, .45);
+    border-radius: 999px;
+    color: var(--white);
+    background: rgba(46, 43, 43, .38);
+    backdrop-filter: blur(8px);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+.instagram-reel-card__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    width: 62px;
+    height: 62px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .72);
+    border-radius: 50%;
+    color: var(--white);
+    background: rgba(213, 181, 135, .62);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .22);
+    transform: translate(-50%, -50%);
+    transition: transform .35s ease, background .35s ease;
+}
+
+.instagram-reel-card__play i {
+    margin-left: 3px;
+    font-size: .95rem;
+}
+
+.instagram-reel-card:hover .instagram-reel-card__play {
+    background: var(--primary-dark);
+    transform: translate(-50%, -50%) scale(1.13);
+}
+
+.instagram-reel-card__content {
+    position: relative;
+    padding: 22px 20px 20px;
+}
+
+.instagram-reel-card__icon {
+    position: absolute;
+    top: 21px;
+    right: 20px;
+    color: var(--dark-gold);
+    font-size: 1.2rem;
+}
+
+.instagram-reel-card h3 {
+    margin: 0 28px 7px 0;
+    font-size: 1.65rem;
+}
+
+.instagram-reel-card p {
+    margin-bottom: 15px;
+    font-size: .82rem;
+    line-height: 1.7;
+}
+
+.instagram-reel-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--dark-gold);
+    font-size: .76rem;
+    font-weight: 600;
+    letter-spacing: .4px;
+}
+
+.instagram-reel-modal .modal-dialog {
+    max-width: min(94vw, 620px);
+}
+
+.instagram-reel-modal .modal-content {
+    overflow: hidden;
+    border: 1px solid rgba(213, 181, 135, .52);
+    border-radius: var(--radius-lg);
+    color: var(--champagne);
+    background: rgba(46, 43, 43, .97);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, .42);
+}
+
+.instagram-reel-modal .modal-header,
+.instagram-reel-modal .modal-footer {
+    border-color: rgba(213, 181, 135, .22);
+}
+
+.instagram-reel-modal .modal-header {
+    align-items: flex-start;
+    padding: 20px 24px;
+}
+
+.instagram-reel-modal .modal-title {
+    color: var(--white);
+    font-size: clamp(1.65rem, 5vw, 2.2rem);
+}
+
+.instagram-reel-modal__eyebrow {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--primary);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.instagram-reel-modal .btn-close {
+    margin: 0;
+    filter: invert(1) grayscale(1) brightness(2);
+}
+
+.instagram-reel-modal .modal-body {
+    padding: 0 24px 22px;
+}
+
+.instagram-reel-modal__embed {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    place-items: center;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: #161414;
+}
+
+.instagram-reel-modal__embed .instagram-media {
+    width: min(100% !important, 540px) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+.instagram-reel-modal__loader {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    gap: 12px;
+    place-items: center;
+    color: var(--primary);
+    font-size: .78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.instagram-reel-modal__loader .spinner-border {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-width: .18em;
+}
+
+.instagram-reel-modal__description {
+    margin: 18px 0 0;
+    color: var(--champagne);
+    font-size: .88rem;
+}
+
+.instagram-reel-modal .modal-footer {
+    gap: 10px;
+    padding: 16px 24px 22px;
+}
+
+.instagram-reel-modal .btn-outline-luxe {
+    color: var(--champagne);
+    border-color: rgba(213, 181, 135, .7);
+}
+
+.modal-backdrop.show {
+    opacity: .76;
+    backdrop-filter: blur(7px);
+}
+
+@media (max-width: 575.98px) {
+    .instagram-reel-modal .modal-dialog {
+        max-width: calc(100vw - 20px);
+    }
+
+    .instagram-reel-modal .modal-header,
+    .instagram-reel-modal .modal-body,
+    .instagram-reel-modal .modal-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .instagram-reel-modal__embed {
+        min-height: 430px;
+    }
+
+    .instagram-reel-modal .modal-footer .btn {
+        width: 100%;
     }
 }
 

@@ -33,6 +33,58 @@ function renderSizeDetails(size) {
         </div>`;
 }
 
+// Uses product.images when it is added later; current products fall back to three demo slides.
+function getProductImages(product) {
+    return Array.isArray(product.images) && product.images.length
+        ? product.images
+        : [product.image, product.imagetwo, product.imagethree];
+}
+
+function renderProductGallery(product) {
+    const images = getProductImages(product);
+
+    return `
+        <div class="product-gallery" aria-label="${product.name} image gallery">
+            <div class="product-gallery__viewport">
+                <div class="product-gallery__track">
+                    ${images.map((image, index) => `
+                        <div class="product-gallery__slide">
+                            <img src="${image}" alt="${product.name} - view ${index + 1}" ${index === 0 ? "" : "loading=\"lazy\""}>
+                        </div>`).join("")}
+                </div>
+                <button class="product-gallery__arrow product-gallery__arrow--previous" type="button" aria-label="Previous image"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="product-gallery__arrow product-gallery__arrow--next" type="button" aria-label="Next image"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+            <div class="product-gallery__dots" role="tablist" aria-label="Choose product image">
+                ${images.map((_, index) => `<button class="product-gallery__dot${index === 0 ? " is-active" : ""}" type="button" aria-label="Show image ${index + 1}" aria-selected="${index === 0}" role="tab"></button>`).join("")}
+            </div>
+        </div>`;
+}
+
+function initialiseProductGallery(container) {
+    const gallery = container.querySelector(".product-gallery");
+    if (!gallery) return;
+
+    const track = gallery.querySelector(".product-gallery__track");
+    const slides = gallery.querySelectorAll(".product-gallery__slide");
+    const dots = gallery.querySelectorAll(".product-gallery__dot");
+    let activeIndex = 0;
+
+    const showSlide = (index) => {
+        activeIndex = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${activeIndex * 100}%)`;
+        dots.forEach((dot, dotIndex) => {
+            const isActive = dotIndex === activeIndex;
+            dot.classList.toggle("is-active", isActive);
+            dot.setAttribute("aria-selected", isActive);
+        });
+    };
+
+    gallery.querySelector(".product-gallery__arrow--previous").addEventListener("click", () => showSlide(activeIndex - 1));
+    gallery.querySelector(".product-gallery__arrow--next").addEventListener("click", () => showSlide(activeIndex + 1));
+    dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
+}
+
 function renderProductDetails() {
     const detailsContainer = document.getElementById("productDetails");
     if (!detailsContainer) return;
@@ -51,7 +103,7 @@ function renderProductDetails() {
 
     document.title = `${product.name} | Ghazaal Exclusive Abaya`;
     detailsContainer.innerHTML = `
-        <div class="col-lg-6"><img src="${product.image}" class="img-fluid rounded shadow-lg" alt="${product.name}"></div>
+        <div class="col-lg-6">${renderProductGallery(product)}</div>
         <div class="col-lg-6">
             ${product.badge ? `<span class="badge bg-warning text-dark mb-3">${product.badge}</span>` : ""}
             <h1 class="mb-3">${product.name}</h1><h2 style="color:#b18e1e;">${formatPrice(product.price)}</h2>
@@ -61,6 +113,8 @@ function renderProductDetails() {
             <a id="continueOrder" href="addorder.html?id=${product.id}" class="btn btn-success btn-lg me-3 mt-3"><i class="fas fa-shopping-cart"></i> Continue Order</a>
             <a href="collection.html" class="btn btn-gold btn-lg mt-3">Back To Collection</a>
         </div>`;
+
+    initialiseProductGallery(detailsContainer);
 
     let selectedSize = "";
     const continueOrder = document.getElementById("continueOrder");

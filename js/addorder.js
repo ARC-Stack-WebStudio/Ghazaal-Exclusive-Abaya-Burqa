@@ -11,22 +11,22 @@
     }
 
     const selectedSize = urlParams.get("size");
-    const sizes = product.sizes || ["XS", "S", "M", "L", "XL", "XXL", "3XL"];
+    const sizes = product.sizes || [ "L", "XL", "XXL", "3XL"];
     const fabric = product.fabricDetails.join(", ");
     const category = product.category || (product.name.toLowerCase().includes("burqa") ? "Burqa" : "Abaya");
     const cityData = {
-        ahmedabad: { city: "Ahmedabad", state: "Gujarat", pincode: "380001", pincodes: ["380001", "380015", "380054"] },
-        aurangabad: { city: "Aurangabad", state: "Maharashtra", pincode: "431001", pincodes: ["431001", "431005", "431136"] },
-        bengaluru: { city: "Bengaluru", state: "Karnataka", pincode: "560001", pincodes: ["560001", "560002", "560004"] },
-        bhiwandi: { city: "Bhiwandi", state: "Maharashtra", pincode: "421302", pincodes: ["421302", "421305", "421308"] },
-        chennai: { city: "Chennai", state: "Tamil Nadu", pincode: "600001", pincodes: ["600001", "600002", "600003"] },
-        hyderabad: { city: "Hyderabad", state: "Telangana", pincode: "500001", pincodes: ["500001", "500002", "500003"] },
-        jaipur: { city: "Jaipur", state: "Rajasthan", pincode: "302001", pincodes: ["302001", "302002", "302003"] },
-        lucknow: { city: "Lucknow", state: "Uttar Pradesh", pincode: "226001", pincodes: ["226001", "226003", "226010"] },
-        mumbai: { city: "Mumbai", state: "Maharashtra", pincode: "400001", pincodes: ["400001", "400002", "400003"] },
-        nagpur: { city: "Nagpur", state: "Maharashtra", pincode: "440001", pincodes: ["440001", "440002", "440003"] },
-        pune: { city: "Pune", state: "Maharashtra", pincode: "411001", pincodes: ["411001", "411004"] },
-        surat: { city: "Surat", state: "Gujarat", pincode: "395003", pincodes: ["395003", "395007", "395009"] }
+        ahmedabad: { city: "Ahmedabad", state: "Gujarat", pincode: "380001", pincodes: ["380001", "380015", "380054"], shipping: "₹280 - ₹330" },
+        aurangabad: { city: "Aurangabad", state: "Maharashtra", pincode: "431001", pincodes: ["431001", "431005", "431136"], shipping: "₹280 - ₹330" },
+        bengaluru: { city: "Bengaluru", state: "Karnataka", pincode: "560001", pincodes: ["560001", "560002", "560004"], shipping: "₹300 - ₹350" },
+        bhiwandi: { city: "Bhiwandi", state: "Maharashtra", pincode: "421302", pincodes: ["421302", "421305", "421308"], shipping: "₹50 - ₹100" },
+        chennai: { city: "Chennai", state: "Tamil Nadu", pincode: "600001", pincodes: ["600001", "600002", "600003"], shipping: "₹300 - ₹350" },
+        hyderabad: { city: "Hyderabad", state: "Telangana", pincode: "500001", pincodes: ["500001", "500002", "500003"], shipping: "₹300 - ₹350" },
+        jaipur: { city: "Jaipur", state: "Rajasthan", pincode: "302001", pincodes: ["302001", "302002", "302003"], shipping: "₹300 - ₹350" },
+        lucknow: { city: "Lucknow", state: "Uttar Pradesh", pincode: "226001", pincodes: ["226001", "226003", "226010"], shipping: "₹250 - ₹300" },
+        mumbai: { city: "Mumbai", state: "Maharashtra", pincode: "400001", pincodes: ["400001", "400002", "400003"], shipping: "₹200 - ₹250" },
+        nagpur: { city: "Nagpur", state: "Maharashtra", pincode: "440001", pincodes: ["440001", "440002", "440003"], shipping: "₹250 - ₹300" },
+        pune: { city: "Pune", state: "Maharashtra", pincode: "411001", pincodes: ["411001", "411004"], shipping: "₹180 - ₹250" },
+        surat: { city: "Surat", state: "Gujarat", pincode: "395003", pincodes: ["395003", "395007", "395009"], shipping: "₹220 - ₹280" }
     };
     const indianStates = [
         "Andaman & Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra & Nagar Haveli and Daman & Diu", "Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu & Kashmir", "Jharkhand", "Karnataka", "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
@@ -56,6 +56,7 @@
                 <div class="col-md-4"><label for="state" class="form-label">State *</label><input id="state" name="state" class="form-control" required autocomplete="address-level1" list="stateSuggestions"><datalist id="stateSuggestions">${indianStates.map((state) => `<option value="${state}"></option>`).join("")}</datalist><div class="invalid-feedback">Please select a valid Indian state or union territory.</div></div>
                 <div class="col-md-4"><label for="pincode" class="form-label">Pincode *</label><input id="pincode" name="pincode" class="form-control" required inputmode="numeric" autocomplete="postal-code" list="pincodeSuggestions"><datalist id="pincodeSuggestions"></datalist><div class="invalid-feedback">Please enter a valid 6-digit pincode.</div></div>
                 <div class="col-md-6"><label for="country" class="form-label">Country</label><input id="country" name="country" class="form-control" value="India" autocomplete="country-name"></div>
+                <div class="col-md-6"> <label for="shippingCharge" class="form-label"> Shipping Charges </label> <input  id="shippingCharge"  name="shippingCharge"  class="form-control"  readonly  placeholder="Will auto-fill"> </div>
                 <div class="col-md-3"><label for="size" class="form-label">Size *</label><select id="size" name="size" class="form-select form-control" required><option value="">Select size</option>${sizes.map((size) => `<option value="${escapeHtml(size)}">${escapeHtml(size)}</option>`).join("")}</select><div class="invalid-feedback">Please select a size.</div></div>
                 <div class="col-md-3"><label for="quantity" class="form-label">Quantity *</label><input id="quantity" name="quantity" class="form-control" type="number" min="1" value="1" required inputmode="numeric"><div class="invalid-feedback">Enter a quantity of at least 1.</div></div>
             </div>
@@ -65,6 +66,7 @@
     const form = document.getElementById("orderForm");
     const fields = Object.fromEntries(["customerName", "mobile", "email", "house", "street", "area", "landmark", "city", "state", "pincode", "size", "quantity"].map((id) => [id, document.getElementById(id)]));
     const country = document.getElementById("country");
+    const shippingCharge = document.getElementById("shippingCharge");
     const lockedSize = selectedSize && sizes.includes(selectedSize) ? selectedSize : "";
     const pincodeSuggestions = document.getElementById("pincodeSuggestions");
 
@@ -116,6 +118,7 @@
             if (lastAutofilledCity) {
                 fields.state.value = "";
                 fields.pincode.value = "";
+                shippingCharge.value = "";
                 pincodeSuggestions.innerHTML = "";
                 [fields.state, fields.pincode].forEach((field) => {
                     field.setCustomValidity("");
@@ -128,6 +131,7 @@
         fields.city.value = city.city;
         fields.state.value = city.state;
         fields.pincode.value = city.pincode;
+        shippingCharge.value = city.shipping;
         pincodeSuggestions.innerHTML = city.pincodes.map((pincode) => `<option value="${pincode}"></option>`).join("");
         lastAutofilledCity = city.city;
         validateField(fields.state);
@@ -180,7 +184,104 @@
 
         const data = new FormData(form);
         const quantity = Number(data.get("quantity"));
-        const message = `🛍️ NEW ORDER\n\n----------------------------------\n\nCustomer Details\n\nName:\n${data.get("customerName")}\n\nMobile:\n${data.get("mobile")}\n\nEmail:\n${data.get("email") || "Not provided"}\n\n----------------------------------\n\nDelivery Address\n\nHouse:\n${data.get("house")}\n\nStreet:\n${data.get("street")}\n\nArea:\n${data.get("area")}\n\nLandmark:\n${data.get("landmark") || "Not provided"}\n\nCity:\n${data.get("city")}\n\nState:\n${data.get("state")}\n\nPincode:\n${data.get("pincode")}\n\nCountry:\n${data.get("country") || "India"}\n\n----------------------------------\n\nProduct Details\n\nProduct:\n${product.name}\n\nPrice:\n₹${product.price}\n\nSize:\n${data.get("size")}\n\nQuantity:\n${quantity}\n\nFabric:\n${fabric}\n\nCategory:\n${category}\n\n----------------------------------\n\nTotal Price\n\n₹ ${product.price * quantity}\n\n----------------------------------\n\nThank You.`;
+
+        const productTotal = product.price * quantity;
+
+        // If shippingCharge is an input field
+        const shippingText = shippingCharge.value || "₹0";
+
+        // Extract first amount from "₹50 - ₹100"
+        const shippingAmount = parseInt(shippingText.replace(/[^\d]/g, "")) || 0;
+
+        const grandTotal = productTotal + shippingAmount;
+        // const message = `🛍️ NEW ORDER\n\n----------------------------------\n\nCustomer Details\n\nName:\n${data.get("customerName")}\n\nMobile:\n${data.get("mobile")}\n\nEmail:\n${data.get("email") || "Not provided"}\n\n----------------------------------\n\nDelivery Address\n\nHouse:\n${data.get("house")}\n\nStreet:\n${data.get("street")}\n\nArea:\n${data.get("area")}\n\nLandmark:\n${data.get("landmark") || "Not provided"}\n\nCity:\n${data.get("city")}\n\nState:\n${data.get("state")}\n\nPincode:\n${data.get("pincode")}\n\nCountry:\n${data.get("country") || "India"}\n\n----------------------------------\n\nProduct Details\n\nProduct:\n${product.name}\n\nPrice:\n₹${product.price}\n\nSize:\n${data.get("size")}\n\nQuantity:\n${quantity}\n\nFabric:\n${fabric}\n\nCategory:\n${category}\n\n----------------------------------\n\nTotal Price\n\n₹ ${product.price * quantity}\n\n----------------------------------\n\nThank You.`;
+        const message = `*🛍️ NEW ORDER REQUEST*
+
+            ━━━━━━━━━━━━━━━━━━━━━━
+            👤 *CUSTOMER DETAILS*
+            ━━━━━━━━━━━━━━━━━━━━━━
+
+            👤 Name
+            ${data.get("customerName")}
+
+            📱 Mobile
+            ${data.get("mobile")}
+
+            📧 Email
+            ${data.get("email") || "Not Provided"}
+
+            ━━━━━━━━━━━━━━━━━━━━━━
+            📍 DELIVERY ADDRESS
+            ━━━━━━━━━━━━━━━━━━━━━━
+
+            🏠 House / Flat
+            ${data.get("house")}
+
+            🛣️ Street
+            ${data.get("street")}
+
+            📍 Area
+            ${data.get("area")}
+
+            📌 Landmark
+            ${data.get("landmark") || "Not Provided"}
+
+            🏙️ City
+            ${data.get("city")}
+
+            🗺️ State
+            ${data.get("state")}
+
+            📮 Pincode
+            ${data.get("pincode")}
+
+            🌍 Country
+            ${data.get("country") || "India"}
+
+            ━━━━━━━━━━━━━━━━━━━━━━
+            🛒 PRODUCT DETAILS
+            ━━━━━━━━━━━━━━━━━━━━━━
+
+            🛍️ Product
+            ${product.name}
+
+            🏷️ Category
+            ${category}
+
+            🧵 Fabric
+            ${fabric}
+
+            📏 Size
+            ${data.get("size")}
+
+            📦 Quantity
+            ${quantity}
+
+            💰 Price (Per Piece)
+            ₹${product.price}
+
+            ━━━━━━━━━━━━━━━━━━━━━━
+            🚚 SHIPPING DETAILS
+            ━━━━━━━━━━━━━━━━━━━━━━
+
+            Shipping Charges
+            ${shippingText}
+
+            ━━━━━━━━━━━━━━━━━━━━━━
+            💳 PAYMENT SUMMARY
+            ━━━━━━━━━━━━━━━━━━━━━━
+
+            Product Total
+            ₹${productTotal}
+
+            Shipping Charges
+            ${shippingText}
+
+            ━━━━━━━━━━━━━━━━━━━━━━
+
+            🙏 Thank you for shopping with *Ghazaal Exclusive Abaya*.
+
+        Our team will contact you shortly to confirm your order. ❤️`;
         window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
     });
 })();
