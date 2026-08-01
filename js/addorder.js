@@ -282,6 +282,23 @@
             🙏 Thank you for shopping with *Ghazaal Exclusive Abaya*.
 
         Our team will contact you shortly to confirm your order. ❤️`;
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+        const reviewRequest = `
+
+🌸 Thank You for Choosing Ghazaal Exclusive Abaya!
+
+Your support means everything to us. ❤️
+
+Once you receive your order, we would be truly grateful if you could take a minute to share your experience with us on Google.
+
+⭐⭐⭐⭐⭐ Your 5-Star Review helps us grow and inspires other sisters to shop with confidence.
+
+👉 Leave Your Review Here:
+https://www.google.com/maps/place//@19.3001006,73.0554429,17z/data=!3m1!4b1!4m3!3m2!1s0x3be7bd66793a6439:0x2bef66bd1192dac9!12e1?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D
+
+JazakAllah Khair for your love and support.
+We look forward to serving you again! 🤍
+— Ghazaal Exclusive Abaya`;
+
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message + reviewRequest)}`, "_blank", "noopener");
     });
 })();
