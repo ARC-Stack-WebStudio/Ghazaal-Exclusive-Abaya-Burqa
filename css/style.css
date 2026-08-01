@@ -1622,6 +1622,7 @@ select.form-control {
 .instagram-reel-modal .modal-header {
     align-items: flex-start;
     padding: 20px 24px;
+    justify-content: space-between;
 }
 
 .instagram-reel-modal .modal-title {
@@ -1659,7 +1660,7 @@ select.form-control {
 }
 
 .instagram-reel-modal__embed .instagram-media {
-    width: min(100% !important, 540px) !important;
+    /* width: min(100% !important, 540px) !important; */
     min-width: 0 !important;
     margin: 0 !important;
 }
