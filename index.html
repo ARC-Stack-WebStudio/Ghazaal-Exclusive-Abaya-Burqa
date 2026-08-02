@@ -181,16 +181,18 @@
                 <div class="section-heading text-center" data-aos="fade-up">
                     <span class="eyebrow">Follow Our Story</span>
                     <h2>Instagram Reels</h2>
-                    <p>Watch our latest Abaya styling videos, customer looks and new arrivals directly from Instagram.</p>
+                    <p>Watch our latest Abaya styling videos, customer moments and exclusive collections directly from Instagram.</p>
                 </div>
 
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6" data-aos="fade-up">
                         <article class="instagram-reel-card" role="button" tabindex="0"
                             aria-label="Watch the latest Ghazaal Exclusive Abaya Instagram Reel"
-                            data-reel-url="https://www.instagram.com/reel/DOBiXKvDFGW/"
-                            data-reel-title="Ghazaal Signature Edit"
-                            data-reel-description="Discover a graceful look from our latest premium abaya collection.">
+                            data-instagram-url="https://www.instagram.com/reel/DOBiXKvDFGW/"
+                            data-title="Ghazaal Signature Edit"
+                            data-video-description="Discover a graceful look from our latest premium abaya collection."
+                            data-video-src="assets/videos/reel1.mp4"
+                            data-category="Signature Collection">
                             <div class="instagram-reel-card__media">
                                 <img src="https://www.instagram.com/reel/DOBiXKvDFGW/media/?size=l" alt="Ghazaal Signature Edit Instagram Reel cover" loading="lazy">
                                 <span class="instagram-reel-card__shade"></span>
@@ -208,9 +210,11 @@
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <article class="instagram-reel-card" role="button" tabindex="0"
                             aria-label="Watch a Ghazaal Exclusive Abaya Instagram Reel"
-                            data-reel-url="https://www.instagram.com/reel/DUqYnv-DMu7/"
-                            data-reel-title="Everyday Elegance"
-                            data-reel-description="Modest styling made effortless for your beautifully composed everyday moments.">
+                            data-instagram-url="https://www.instagram.com/reel/DUqYnv-DMu7/"
+                            data-title="Everyday Elegance"
+                            data-video-description="Modest styling made effortless for your beautifully composed everyday moments."
+                            data-video-src="assets/videos/reel2.mp4"
+                            data-category="Everyday Luxury">
                             <div class="instagram-reel-card__media">
                                 <img src="https://www.instagram.com/reel/DUqYnv-DMu7/media/?size=l" alt="Everyday Elegance Instagram Reel cover" loading="lazy">
                                 <span class="instagram-reel-card__shade"></span>
@@ -228,9 +232,11 @@
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <article class="instagram-reel-card" role="button" tabindex="0"
                             aria-label="Watch a Ghazaal Exclusive Abaya Instagram Reel"
-                            data-reel-url="https://www.instagram.com/reel/DO0VTeBAdZt/"
-                            data-reel-title="New Arrival Spotlight"
-                            data-reel-description="A closer look at refined fabric, elegant movement and contemporary modest fashion.">
+                            data-instagram-url="https://www.instagram.com/reel/DO0VTeBAdZt/"
+                            data-title="New Arrival Spotlight"
+                            data-video-description="A closer look at refined fabric, elegant movement and contemporary modest fashion."
+                            data-video-src="assets/videos/reel3.mp4"
+                            data-category="New Arrivals">
                             <div class="instagram-reel-card__media">
                                 <img src="https://www.instagram.com/reel/DO0VTeBAdZt/media/?size=l" alt="New Arrival Spotlight Instagram Reel cover" loading="lazy">
                                 <span class="instagram-reel-card__shade"></span>
@@ -248,9 +254,11 @@
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <article class="instagram-reel-card" role="button" tabindex="0"
                             aria-label="Watch a Ghazaal Exclusive Abaya Instagram Reel"
-                            data-reel-url="https://www.instagram.com/reel/DOBh1McjDur/"
-                            data-reel-title="Boutique Moments"
-                            data-reel-description="Celebrate luxury modest wear with a fresh moment from the Ghazaal boutique.">
+                            data-instagram-url="https://www.instagram.com/reel/DOBh1McjDur/"
+                            data-title="Boutique Moments"
+                            data-video-description="Celebrate luxury modest wear with a fresh moment from the Ghazaal boutique."
+                            data-video-src="assets/videos/reel4.mp4"
+                            data-category="Boutique Stories">
                             <div class="instagram-reel-card__media">
                                 <img src="https://www.instagram.com/reel/DOBh1McjDur/media/?size=l" alt="Boutique Moments Instagram Reel cover" loading="lazy">
                                 <span class="instagram-reel-card__shade"></span>
@@ -280,29 +288,41 @@
             aria-labelledby="instagramReelModalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <div>
-                            <span class="instagram-reel-modal__eyebrow"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram Reel</span>
-                            <h2 class="modal-title" id="instagramReelModalTitle">Instagram Reel</h2>
-                        </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close reel viewer"></button>
-                    </div>
                     <div class="modal-body">
-                        <div class="instagram-reel-modal__embed" id="instagramReelEmbed" aria-live="polite">
-                            <div class="instagram-reel-modal__loader" aria-label="Loading Instagram Reel">
-                                <span class="spinner-border" aria-hidden="true"></span>
-                                <span>Loading Reel</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close reel viewer"></button>
+                        <div class="instagram-reel-modal__viewer">
+                            <div class="instagram-reel-modal__stage">
+                                <div class="instagram-reel-modal__video-wrap">
+                                    <video id="instagramReelVideo" class="instagram-reel-modal__video" controls playsinline preload="none" aria-label="Selected Ghazaal Instagram Reel video"></video>
+                                    <div class="instagram-reel-modal__video-tools">
+                                        <label for="instagramReelPlaybackRate">Speed</label>
+                                        <select id="instagramReelPlaybackRate" aria-label="Video playback speed">
+                                            <option value="0.75">0.75x</option>
+                                            <option value="1" selected>1x</option>
+                                            <option value="1.25">1.25x</option>
+                                            <option value="1.5">1.5x</option>
+                                            <option value="2">2x</option>
+                                        </select>
+                                        <button type="button" id="instagramReelPipButton" aria-label="Open picture in picture" title="Picture in picture"><i class="fas fa-clone" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
                             </div>
+                            <aside class="instagram-reel-modal__details">
+                                <span class="instagram-reel-modal__eyebrow"><i class="fab fa-instagram" aria-hidden="true"></i> The Ghazaal Edit</span>
+                                <span class="instagram-reel-modal__category" id="instagramReelModalCategory">Exclusive Abaya Collection</span>
+                                <h2 class="modal-title" id="instagramReelModalTitle">Instagram Reel</h2>
+                                <p id="instagramReelModalDescription" class="instagram-reel-modal__description"></p>
+                                <div class="instagram-reel-modal__divider" aria-hidden="true"></div>
+                                <div class="instagram-reel-modal__follow">
+                                    <span class="instagram-reel-modal__instagram-icon"><i class="fab fa-instagram" aria-hidden="true"></i></span>
+                                    <span><strong>Follow Ghazaal</strong><small>@ghazaal_xclusive_abayas</small></span>
+                                </div>
+                                <div class="instagram-reel-modal__actions">
+                                    <a id="instagramReelExternalLink" class="btn btn-gold" href="#" target="_blank" rel="noopener noreferrer">View Full Reel <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                    <a class="btn btn-outline-luxe" href="https://www.instagram.com/ghazaal_xclusive_abayas/" target="_blank" rel="noopener noreferrer">Visit Instagram Profile <i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                </div>
+                            </aside>
                         </div>
-                        <p id="instagramReelModalDescription" class="instagram-reel-modal__description"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <a id="instagramReelExternalLink" class="btn btn-gold" href="#" target="_blank" rel="noopener noreferrer">
-                            View Full Reel <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                        </a>
-                        <a class="btn btn-outline-luxe" href="https://www.instagram.com/ghazaal_xclusive_abayas/" target="_blank" rel="noopener noreferrer">
-                            Visit Instagram Profile
-                        </a>
                     </div>
                 </div>
             </div>
