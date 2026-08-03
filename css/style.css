@@ -2115,9 +2115,15 @@ select.form-control {
 }
 
 .instagram-reel-modal__embed .instagram-media {
-    /* width: min(100% !important, 540px) !important; */
+    width: 100% !important;
+    max-width: 540px !important;
     min-width: 0 !important;
     margin: 0 !important;
+}
+
+.instagram-reel-modal__embed iframe {
+    max-width: 100% !important;
+    border: 0;
 }
 
 .instagram-reel-modal__loader {
