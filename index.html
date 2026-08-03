@@ -181,17 +181,23 @@
                 <div class="section-heading text-center" data-aos="fade-up">
                     <span class="eyebrow">Follow Our Story</span>
                     <h2>Instagram Reels</h2>
+<<<<<<< HEAD
+                    <p>Watch our latest Abaya styling videos, customer moments and exclusive collections directly from Instagram.</p>
+=======
                     <p>Watch our latest Abaya styling videos, customer looks and new arrivals directly from Instagram.
                     </p>
+>>>>>>> origin/main
                 </div>
 
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6" data-aos="fade-up">
                         <article class="instagram-reel-card" role="button" tabindex="0"
                             aria-label="Watch the latest Ghazaal Exclusive Abaya Instagram Reel"
-                            data-reel-url="https://www.instagram.com/reel/DOBiXKvDFGW/"
-                            data-reel-title="Ghazaal Signature Edit"
-                            data-reel-description="Discover a graceful look from our latest premium abaya collection.">
+                            data-instagram-url="https://www.instagram.com/reel/DOBiXKvDFGW/"
+                            data-title="Ghazaal Signature Edit"
+                            data-video-description="Discover a graceful look from our latest premium abaya collection."
+                            data-video-src="assets/videos/reel1.mp4"
+                            data-category="Signature Collection">
                             <div class="instagram-reel-card__media">
                                 <img src="https://www.instagram.com/reel/DOBiXKvDFGW/media/?size=l"
                                     alt="Ghazaal Signature Edit Instagram Reel cover" loading="lazy">
@@ -213,9 +219,11 @@
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <article class="instagram-reel-card" role="button" tabindex="0"
                             aria-label="Watch a Ghazaal Exclusive Abaya Instagram Reel"
-                            data-reel-url="https://www.instagram.com/reel/DUqYnv-DMu7/"
-                            data-reel-title="Everyday Elegance"
-                            data-reel-description="Modest styling made effortless for your beautifully composed everyday moments.">
+                            data-instagram-url="https://www.instagram.com/reel/DUqYnv-DMu7/"
+                            data-title="Everyday Elegance"
+                            data-video-description="Modest styling made effortless for your beautifully composed everyday moments."
+                            data-video-src="assets/videos/reel2.mp4"
+                            data-category="Everyday Luxury">
                             <div class="instagram-reel-card__media">
                                 <img src="https://www.instagram.com/reel/DUqYnv-DMu7/media/?size=l"
                                     alt="Everyday Elegance Instagram Reel cover" loading="lazy">
@@ -237,9 +245,11 @@
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <article class="instagram-reel-card" role="button" tabindex="0"
                             aria-label="Watch a Ghazaal Exclusive Abaya Instagram Reel"
-                            data-reel-url="https://www.instagram.com/reel/DO0VTeBAdZt/"
-                            data-reel-title="New Arrival Spotlight"
-                            data-reel-description="A closer look at refined fabric, elegant movement and contemporary modest fashion.">
+                            data-instagram-url="https://www.instagram.com/reel/DO0VTeBAdZt/"
+                            data-title="New Arrival Spotlight"
+                            data-video-description="A closer look at refined fabric, elegant movement and contemporary modest fashion."
+                            data-video-src="assets/videos/reel3.mp4"
+                            data-category="New Arrivals">
                             <div class="instagram-reel-card__media">
                                 <img src="https://www.instagram.com/reel/DO0VTeBAdZt/media/?size=l"
                                     alt="New Arrival Spotlight Instagram Reel cover" loading="lazy">
@@ -262,9 +272,17 @@
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <article class="instagram-reel-card" role="button" tabindex="0"
                             aria-label="Watch a Ghazaal Exclusive Abaya Instagram Reel"
+<<<<<<< HEAD
+                            data-instagram-url="https://www.instagram.com/reel/DOBh1McjDur/"
+                            data-title="Boutique Moments"
+                            data-video-description="Celebrate luxury modest wear with a fresh moment from the Ghazaal boutique."
+                            data-video-src="assets/videos/reel4.mp4"
+                            data-category="Boutique Stories">
+=======
                             data-reel-url="https://www.instagram.com/reel/DTpr1cKDPau/?igsh=MTM5NXZuamQydnR0MQ=="
                             data-reel-title="Boutique Moments" data-reel-description="Celebrate luxury modest wear with a fresh moment from the Ghazaal
                             boutique.">
+>>>>>>> origin/main
                             <div class="instagram-reel-card__media">
                                 <img src="https://www.instagram.com/reel/DTpr1cKDPau/?igsh=MTM5NXZuamQydnR0MQ=="
                                     alt="Boutique Moments Instagram Reel cover" loading="lazy">
@@ -299,6 +317,8 @@
             aria-labelledby="instagramReelModalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
+<<<<<<< HEAD
+=======
                     <div class="modal-header">
                         <div>
                             <span class="instagram-reel-modal__eyebrow"><i class="fab fa-instagram"
@@ -308,13 +328,44 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close reel viewer"></button>
                     </div>
+>>>>>>> origin/main
                     <div class="modal-body">
-                        <div class="instagram-reel-modal__embed" id="instagramReelEmbed" aria-live="polite">
-                            <div class="instagram-reel-modal__loader" aria-label="Loading Instagram Reel">
-                                <span class="spinner-border" aria-hidden="true"></span>
-                                <span>Loading Reel</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close reel viewer"></button>
+                        <div class="instagram-reel-modal__viewer">
+                            <div class="instagram-reel-modal__stage">
+                                <div class="instagram-reel-modal__video-wrap">
+                                    <video id="instagramReelVideo" class="instagram-reel-modal__video" controls playsinline preload="none" aria-label="Selected Ghazaal Instagram Reel video"></video>
+                                    <div class="instagram-reel-modal__video-tools">
+                                        <label for="instagramReelPlaybackRate">Speed</label>
+                                        <select id="instagramReelPlaybackRate" aria-label="Video playback speed">
+                                            <option value="0.75">0.75x</option>
+                                            <option value="1" selected>1x</option>
+                                            <option value="1.25">1.25x</option>
+                                            <option value="1.5">1.5x</option>
+                                            <option value="2">2x</option>
+                                        </select>
+                                        <button type="button" id="instagramReelPipButton" aria-label="Open picture in picture" title="Picture in picture"><i class="fas fa-clone" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
                             </div>
+                            <aside class="instagram-reel-modal__details">
+                                <span class="instagram-reel-modal__eyebrow"><i class="fab fa-instagram" aria-hidden="true"></i> The Ghazaal Edit</span>
+                                <span class="instagram-reel-modal__category" id="instagramReelModalCategory">Exclusive Abaya Collection</span>
+                                <h2 class="modal-title" id="instagramReelModalTitle">Instagram Reel</h2>
+                                <p id="instagramReelModalDescription" class="instagram-reel-modal__description"></p>
+                                <div class="instagram-reel-modal__divider" aria-hidden="true"></div>
+                                <div class="instagram-reel-modal__follow">
+                                    <span class="instagram-reel-modal__instagram-icon"><i class="fab fa-instagram" aria-hidden="true"></i></span>
+                                    <span><strong>Follow Ghazaal</strong><small>@ghazaal_xclusive_abayas</small></span>
+                                </div>
+                                <div class="instagram-reel-modal__actions">
+                                    <a id="instagramReelExternalLink" class="btn btn-gold" href="#" target="_blank" rel="noopener noreferrer">View Full Reel <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                    <a class="btn btn-outline-luxe" href="https://www.instagram.com/ghazaal_xclusive_abayas/" target="_blank" rel="noopener noreferrer">Visit Instagram Profile <i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                </div>
+                            </aside>
                         </div>
+<<<<<<< HEAD
+=======
                         <p id="instagramReelModalDescription" class="instagram-reel-modal__description"></p>
                     </div>
                     <div class="modal-footer">
@@ -326,6 +377,7 @@
                             target="_blank" rel="noopener noreferrer">
                             Visit Instagram Profile
                         </a>
+>>>>>>> origin/main
                     </div>
                 </div>
             </div>
@@ -511,21 +563,94 @@
             </div>
         </section>
 
-        <section id="blog" class="section-padding blog-section">
+        <section id="retail-wholesale" class="section-padding retail-wholesale-section">
             <div class="container">
                 <div class="section-heading text-center" data-aos="fade-up">
-                    <span class="eyebrow">Journal</span>
-                    <h2>Style Notes From Ghazaal</h2>
+                    <span class="eyebrow">Business Partners</span>
+                    <h2>Retail &amp; Wholesale</h2>
+                    <p>Premium Abayas for Every Customer &amp; Every Business</p>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-4" data-aos="fade-up">
-                        <article class="blog-card">Latest Abaya Trends</article>
+
+                <div class="retail-wholesale-intro row align-items-center g-5">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="retail-wholesale-image">
+                            <img src="./Images/Collection-Abayas.png" alt="Premium Dubai-style abayas from Ghazaal Exclusive Abaya">
+                            <div class="retail-image-note">
+                                <span>Ghazaal Exclusive</span>
+                                <strong>Curated for you &amp; your business</strong>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <article class="blog-card">How To Style An Abaya</article>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <p class="retail-wholesale-lead">Whether you're shopping for yourself or looking to grow your fashion business, Ghazaal Exclusive Abaya offers premium Dubai-style abayas for retail customers, boutiques, resellers, fashion stores, and wholesale partners across India.</p>
+                        <div class="partner-cards">
+                            <article class="partner-card">
+                                <div class="partner-card__heading">
+                                    <span class="partner-card__icon"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i></span>
+                                    <h3>Retail Customers</h3>
+                                </div>
+                                <ul class="partner-list">
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Premium Dubai Collection</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Individual Orders</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Easy WhatsApp Ordering</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Home Delivery Across India</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Premium Quality Fabrics</li>
+                                </ul>
+                                <a href="collection.html" class="btn btn-gold">Shop Collection</a>
+                            </article>
+                            <article class="partner-card">
+                                <div class="partner-card__heading">
+                                    <span class="partner-card__icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span>
+                                    <h3>Wholesale Partners</h3>
+                                </div>
+                                <ul class="partner-list">
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Bulk Orders</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Boutique Supply</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Reseller Support</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Attractive Wholesale Pricing</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Fast Nationwide Delivery</li>
+                                </ul>
+                                <a href="https://wa.me/919769443142?text=Hello%20Ghazaal%20Exclusive%20Abaya%2C%20I%20would%20like%20the%20wholesale%20catalogue." class="btn btn-outline-luxe" target="_blank" rel="noopener noreferrer">Get Wholesale Catalogue</a>
+                            </article>
+                        </div>
                     </div>
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <article class="blog-card">Dubai Fashion Inspiration</article>
+                </div>
+
+                <div class="business-process" data-aos="fade-up">
+                    <div class="business-process__heading text-center">
+                        <span class="eyebrow">Simple &amp; Personal</span>
+                        <h3>Business Process</h3>
+                    </div>
+                    <ol class="process-steps">
+                        <li><span class="process-step__number" aria-label="Step 1"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span><strong>Browse Collection</strong></li>
+                        <li><span class="process-step__number" aria-label="Step 2"><i class="fab fa-whatsapp" aria-hidden="true"></i></span><strong>Contact on WhatsApp</strong></li>
+                        <li><span class="process-step__number" aria-label="Step 3"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></span><strong>Retail Order / Wholesale Quote</strong></li>
+                        <li><span class="process-step__number" aria-label="Step 4"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i></span><strong>Fast Delivery Across India</strong></li>
+                    </ol>
+                </div>
+
+                <div class="why-ghazaal" data-aos="fade-up">
+                    <div class="business-process__heading text-center">
+                        <span class="eyebrow">The Ghazaal Promise</span>
+                        <h3>Why Choose Ghazaal</h3>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-sm-6 col-lg-3"><article class="why-card"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i><h4>Pan India Delivery</h4></article></div>
+                        <div class="col-sm-6 col-lg-3"><article class="why-card"><i class="fa-solid fa-scissors" aria-hidden="true"></i><h4>Premium Dubai Fabrics</h4></article></div>
+                        <div class="col-sm-6 col-lg-3"><article class="why-card"><i class="fa-solid fa-store" aria-hidden="true"></i><h4>Retail &amp; Wholesale Available</h4></article></div>
+                        <div class="col-sm-6 col-lg-3"><article class="why-card"><i class="fa-solid fa-handshake" aria-hidden="true"></i><h4>Trusted Business Partner</h4></article></div>
+                    </div>
+                </div>
+
+                <div class="retail-cta" data-aos="zoom-in">
+                    <div>
+                        <span class="eyebrow">Let's Connect</span>
+                        <h3>Ready to Order or Start Your Business?</h3>
+                        <p>Whether you're buying one abaya or placing a bulk order for your boutique, we're here to help with premium quality and dedicated support.</p>
+                    </div>
+                    <div class="retail-cta__actions">
+                        <a href="https://wa.me/919769443142" class="btn btn-gold" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Contact on WhatsApp</a>
+                        <a href="contact.html" class="btn btn-outline-luxe">Book Store Visit</a>
                     </div>
                 </div>
             </div>
