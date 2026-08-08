@@ -738,8 +738,7 @@ h6 {
     color: var(--dark-gold);
 }
 
-.business-process,
-.why-ghazaal {
+.business-process {
     margin-top: 90px;
 }
 
@@ -1648,7 +1647,7 @@ select.form-control {
 
 .gallery-section {
     background:
-        linear-gradient(180deg, rgba(216, 197, 170, 0.90), rgba(232, 216, 191, 0.78)),
+        linear-gradient(180deg, rgba(231, 221, 206, 0.9), rgba(212, 198, 175, 0.78)),
         var(--background) !important;
     color: var(--text) !important;
     padding: 120px 0 80px;
