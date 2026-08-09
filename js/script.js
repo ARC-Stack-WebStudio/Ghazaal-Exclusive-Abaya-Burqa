@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-     const InstagramButton = document.querySelector(".instagram-float");
+    const InstagramButton = document.querySelector(".instagram-float");
 
     if (InstagramButton) {
         setInterval(() => {
@@ -280,4 +280,41 @@ document.addEventListener("DOMContentLoaded", function () {
             behavior: "smooth"
         });
     });
+});
+
+
+
+
+
+// Popup message functionality
+const popup = document.getElementById("popupOverlay");
+const closeBtn = document.getElementById("popupClose");
+
+// Check if popup has already been shown in this session
+const popupShown = sessionStorage.getItem("popupShown");
+
+if (!popupShown) {
+
+    // Popup appears after 4 seconds
+    setTimeout(() => {
+
+        popup.classList.add("popup-show");
+
+        // Mark popup as shown
+        sessionStorage.setItem("popupShown", "true");
+
+        // Show close button after 3 seconds
+        setTimeout(() => {
+            closeBtn.classList.add("show");
+        }, 3000);
+
+    }, 4000);
+}
+
+
+// Close popup
+closeBtn.addEventListener("click", () => {
+
+    popup.classList.remove("popup-show");
+
 });
