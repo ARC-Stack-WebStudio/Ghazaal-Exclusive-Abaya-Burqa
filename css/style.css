@@ -604,27 +604,27 @@ h6 {
 }
 
 /* ===================================
-   RETAIL & WHOLESALE
+   RETAIL & WWholesale
 =================================== */
 
-.retail-wholesale-section {
+.retail-wWholesale-section {
     background: var(--white);
 }
 
-.retail-wholesale-section .section-heading p {
+.retail-wWholesale-section .section-heading p {
     max-width: 590px;
     margin: 18px auto 0;
     font-size: 1.05rem;
 }
 
-.retail-wholesale-image {
+.retail-wWholesale-image {
     position: relative;
     overflow: hidden;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
 }
 
-.retail-wholesale-image::after {
+.retail-wWholesale-image::after {
     content: '';
     position: absolute;
     inset: 18px;
@@ -633,7 +633,7 @@ h6 {
     pointer-events: none;
 }
 
-.retail-wholesale-image img {
+.retail-wWholesale-image img {
     width: 100%;
     min-height: 620px;
     object-fit: cover;
@@ -670,7 +670,7 @@ h6 {
     line-height: 1.05;
 }
 
-.retail-wholesale-lead {
+.retail-wWholesale-lead {
     margin-bottom: 25px;
 }
 
@@ -1819,7 +1819,7 @@ select.form-control {
         margin-top: 0;
     }
 
-    .retail-wholesale-image img {
+    .retail-wWholesale-image img {
         min-height: 500px;
     }
 
@@ -1914,7 +1914,7 @@ select.form-control {
         right: 12px;
     }
 
-    .retail-wholesale-image img {
+    .retail-wWholesale-image img {
         min-height: 410px;
     }
 
