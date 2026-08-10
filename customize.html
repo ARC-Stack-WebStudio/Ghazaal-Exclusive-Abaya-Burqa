@@ -195,46 +195,24 @@
             animation: fadeUp 0.8s ease-out 0.25s both;
         }
 
-        .upload-section h2 {
-            margin-bottom: 10px;
-            font-size: 1.6rem;
-        }
-
-        .upload-section p {
-            color: var(--text);
-            font-size: 0.95rem;
-            line-height: 1.75;
-            margin-bottom: 24px;
-            max-width: 700px;
-        }
-
-        .upload-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        .upload-card {
-            min-height: 320px;
+        .reference-instruction-card {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             gap: 18px;
             padding: 28px;
             border-radius: 24px;
             border: 1px solid rgba(229, 221, 211, 0.9);
-            background: rgba(255, 255, 255, 0.82);
+            background: rgba(255, 255, 255, 0.88);
             box-shadow: 0 18px 50px rgba(46, 43, 43, 0.08);
-            transition: var(--transition);
         }
 
-        .upload-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 28px 70px rgba(46, 43, 43, 0.14);
+        .instruction-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
-        .upload-card-icon {
+        .instruction-icon {
             width: 56px;
             height: 56px;
             display: grid;
@@ -245,114 +223,24 @@
             font-size: 1.4rem;
         }
 
-        .upload-card-title {
-            font-size: 1.08rem;
-            font-weight: 700;
+        .reference-instruction-card h2 {
+            margin: 0;
+            font-size: 1.4rem;
             color: var(--heading);
         }
 
-        .upload-card-desc {
+        .reference-instruction-card p {
             color: var(--text);
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             line-height: 1.75;
             margin: 0;
         }
 
-        .upload-input-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 20px;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.95);
+        .instruction-highlight {
             color: var(--heading);
             font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            width: fit-content;
-        }
-
-        .upload-input-label:hover {
-            border-color: var(--primary-gold);
-            background: rgba(213, 181, 135, 0.12);
-        }
-
-        .upload-input {
-            display: none;
-        }
-
-        .upload-preview {
-            min-height: 145px;
-            padding: 14px;
-            border-radius: 18px;
-            background: rgba(248, 246, 242, 0.86);
-            overflow: hidden;
-            display: grid;
-            place-items: center;
-        }
-
-        .upload-preview img {
-            width: 100%;
-            max-height: 190px;
-            object-fit: contain;
-            border-radius: 16px;
-        }
-
-        .upload-info {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--heading);
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .upload-info i {
-            color: var(--dark-gold);
-        }
-
-        .upload-success {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            border-radius: 999px;
-            background: rgba(46, 125, 59, 0.12);
-            border: 1px solid rgba(46, 125, 59, 0.18);
-            color: #1F6D34;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .upload-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .upload-actions button {
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            padding: 11px 18px;
-            background: #fff;
-            color: var(--heading);
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .upload-actions button:hover {
-            border-color: var(--primary-gold);
-            transform: translateY(-1px);
-        }
-
-        .upload-placeholder {
-            color: var(--text);
-            font-size: 0.95rem;
-            text-align: center;
+            line-height: 1.75;
+            margin-top: 4px;
         }
 
         .customize-cta {
@@ -707,34 +595,15 @@
                     </div>
 
                     <div class="upload-section">
-                        <h2>Upload Your Reference Design</h2>
-                        <p>Have a photo or video of an abaya design you want us to recreate? Upload it below and our team will review it before preparing your custom order.</p>
-                        <div class="upload-grid">
-                            <div class="upload-card">
+                        <div class="reference-instruction-card">
+                            <div class="instruction-header">
+                                <div class="instruction-icon"><i class="fas fa-paper-plane"></i></div>
                                 <div>
-                                    <div class="upload-card-icon"><i class="fas fa-camera"></i></div>
-                                    <div class="upload-card-title">Upload Photo</div>
-                                    <p class="upload-card-desc">JPG, JPEG, PNG, WEBP</p>
+                                    <h2>Upload Your Reference Design on WhatsApp</h2>
                                 </div>
-                                <label class="upload-input-label" for="photoUpload"><i class="fas fa-cloud-arrow-up"></i>Choose Photo</label>
-                                <input type="file" id="photoUpload" class="upload-input" accept=".jpg,.jpeg,.png,.webp">
-                                <div class="upload-preview" id="photoPreview"><span class="upload-placeholder">No photo selected</span></div>
-                                <div id="photoMeta"></div>
-                                <div class="upload-actions" id="photoActions"></div>
                             </div>
-
-                            <div class="upload-card">
-                                <div>
-                                    <div class="upload-card-icon"><i class="fas fa-video"></i></div>
-                                    <div class="upload-card-title">Upload Video</div>
-                                    <p class="upload-card-desc">MP4, MOV, AVI</p>
-                                </div>
-                                <label class="upload-input-label" for="videoUpload"><i class="fas fa-cloud-arrow-up"></i>Choose Video</label>
-                                <input type="file" id="videoUpload" class="upload-input" accept=".mp4,.mov,.avi">
-                                <div class="upload-preview" id="videoPreview"><span class="upload-placeholder">No video selected</span></div>
-                                <div id="videoMeta"></div>
-                                <div class="upload-actions" id="videoActions"></div>
-                            </div>
+                            <p>After submitting this customization form, please upload your reference <strong>photo or video directly on WhatsApp</strong>. Our design team will review your reference and prepare your custom abaya accordingly.</p>
+                            <p class="instruction-highlight"><strong>Please upload your reference photo or video on WhatsApp after submitting this form.</strong></p>
                         </div>
                     </div>
 
@@ -783,10 +652,6 @@
                 fabric: '',
                 color: '',
                 sleeve: '',
-                photo: null,
-                video: null,
-                photoUrl: '',
-                videoUrl: '',
                 customerName: new URLSearchParams(window.location.search).get('name') || ''
             };
 
@@ -802,29 +667,9 @@
                 sleeve: document.getElementById('sleeveBadge')
             };
 
-            const photoInput = document.getElementById('photoUpload');
-            const videoInput = document.getElementById('videoUpload');
-            const photoPreview = document.getElementById('photoPreview');
-            const videoPreview = document.getElementById('videoPreview');
-            const photoMeta = document.getElementById('photoMeta');
-            const videoMeta = document.getElementById('videoMeta');
-            const photoActions = document.getElementById('photoActions');
-            const videoActions = document.getElementById('videoActions');
-            const photoLabel = document.querySelector('[for="photoUpload"]');
-            const videoLabel = document.querySelector('[for="videoUpload"]');
-
             function init() {
                 Object.keys(selects).forEach(key => {
                     selects[key].addEventListener('change', () => updateSelection(key, selects[key].value));
-                });
-
-                photoInput.addEventListener('change', event => handleFile(event.target.files[0], 'photo'));
-                videoInput.addEventListener('change', event => handleFile(event.target.files[0], 'video'));
-
-                whatsappButton.addEventListener('click', function (e) {
-                    if (whatsappButton.classList.contains('disabled')) {
-                        e.preventDefault();
-                    }
                 });
 
                 updateButtonState();
@@ -876,67 +721,13 @@
                     `Fabric: ${state.fabric || 'Not selected'}`,
                     `Color: ${state.color || 'Not selected'}`,
                     `Sleeve Style: ${state.sleeve || 'Not selected'}`,
-                    `Reference Photo: ${state.photo ? `Attached (${state.photo.name})` : 'Not Attached'}`,
-                    `Reference Video: ${state.video ? `Attached (${state.video.name})` : 'Not Attached'}`,
                     '',
-                    'Please contact me regarding this custom design.'
+                    'Please contact me regarding this custom design.',
+                    '',
+                    '𝗣𝗹𝗲𝗮𝘀𝗲 𝘂𝗽𝗹𝗼𝗮𝗱 𝘆𝗼𝘂𝗿 𝗿𝗲𝗳𝗲𝗿𝗲𝗻𝗰𝗲 𝗽𝗵𝗼𝘁𝗼 𝗼𝗿 𝘃𝗶𝗱𝗲𝗼 𝗶𝗻 𝘁𝗵𝗶𝘀 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 𝗰𝗵𝗮𝘁 𝗮𝗳𝘁𝗲𝗿 𝘀𝗲𝗻𝗱𝗶𝗻𝗴 𝘁𝗵𝗶𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲.'
                 );
 
                 whatsappButton.href = `https://wa.me/919769443142?text=${encodeURIComponent(lines.join('\n'))}`;
-            }
-
-            function handleFile(file, type) {
-                if (!file) {
-                    return;
-                }
-
-                state[type] = file;
-                const preview = type === 'photo' ? photoPreview : videoPreview;
-                const meta = type === 'photo' ? photoMeta : videoMeta;
-                const actions = type === 'photo' ? photoActions : videoActions;
-                const label = type === 'photo' ? photoLabel : videoLabel;
-                const urlKey = `${type}Url`;
-
-                if (state[urlKey]) {
-                    URL.revokeObjectURL(state[urlKey]);
-                }
-
-                state[urlKey] = URL.createObjectURL(file);
-
-                if (type === 'photo') {
-                    preview.innerHTML = `<img src="${state[urlKey]}" alt="Reference photo preview">`;
-                } else {
-                    preview.innerHTML = `<div class="upload-info"><i class="fas fa-film"></i><span>${file.name}</span></div>`;
-                }
-
-                meta.innerHTML = `<div class="upload-success"><i class="fas fa-check"></i>${type === 'photo' ? 'Photo uploaded successfully' : 'Video uploaded successfully'}</div>`;
-                actions.innerHTML = `<button type="button" class="file-remove-button" data-type="${type}">Remove</button>`;
-                label.textContent = `Replace ${type === 'photo' ? 'Photo' : 'Video'}`;
-
-                actions.querySelector('.file-remove-button').addEventListener('click', () => removeFile(type));
-                updateWhatsAppLink();
-            }
-
-            function removeFile(type) {
-                const input = type === 'photo' ? photoInput : videoInput;
-                const preview = type === 'photo' ? photoPreview : videoPreview;
-                const meta = type === 'photo' ? photoMeta : videoMeta;
-                const actions = type === 'photo' ? photoActions : videoActions;
-                const label = type === 'photo' ? photoLabel : videoLabel;
-                const urlKey = `${type}Url`;
-
-                input.value = '';
-                if (state[urlKey]) {
-                    URL.revokeObjectURL(state[urlKey]);
-                    state[urlKey] = '';
-                }
-
-                state[type] = null;
-                preview.innerHTML = `<span class="upload-placeholder">No ${type} selected</span>`;
-                meta.innerHTML = '';
-                actions.innerHTML = '';
-                label.textContent = `Choose ${type === 'photo' ? 'Photo' : 'Video'}`;
-                updateWhatsAppLink();
             }
 
             init();
