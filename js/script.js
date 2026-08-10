@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-     const InstagramButton = document.querySelector(".instagram-float");
+    const InstagramButton = document.querySelector(".instagram-float");
 
     if (InstagramButton) {
         setInterval(() => {
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
         item.textContent = new Date().getFullYear();
     });
 
-    /* Instagram Reels: load the official embed only when a reel is opened. */
+    /* Instagram Reels: use Instagram's official player to preserve its playback and sound controls. */
     const reelModalElement = document.getElementById("instagramReelModal");
     const reelEmbed = document.getElementById("instagramReelEmbed");
     const reelTitle = document.getElementById("instagramReelModalTitle");
@@ -194,9 +194,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         const showReel = (card) => {
-            activeReelUrl = card.dataset.reelUrl;
-            reelTitle.textContent = card.dataset.reelTitle;
-            reelDescription.textContent = card.dataset.reelDescription;
+            activeReelUrl = card.dataset.instagramUrl;
+            reelTitle.textContent = card.dataset.title || "Instagram Reel";
+            reelDescription.textContent = card.dataset.videoDescription || "Watch this reel on Instagram.";
             reelExternalLink.href = activeReelUrl;
             reelEmbed.innerHTML = '<div class="instagram-reel-modal__loader" aria-label="Loading Instagram Reel"><span class="spinner-border" aria-hidden="true"></span><span>Loading Reel</span></div>';
             reelModal.show();
@@ -221,7 +221,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 '<blockquote class="instagram-media" data-instgrm-permalink="' + activeReelUrl + '" data-instgrm-version="14" aria-label="Instagram Reel"></blockquote>';
 
             loadInstagramEmbedScript()
-                .then(() => window.instgrm.Embeds.process())
+                .then(() => {
+                    window.instgrm.Embeds.process();
+                    window.setTimeout(() => {
+                        const loader = reelEmbed.querySelector(".instagram-reel-modal__loader");
+                        if (loader && reelEmbed.querySelector("iframe")) loader.remove();
+                    }, 500);
+                })
                 .catch(() => {
                     reelEmbed.innerHTML = '<p class="instagram-reel-modal__description">This Reel could not be loaded. Please view it on Instagram.</p>';
                 });
@@ -274,4 +280,41 @@ document.addEventListener("DOMContentLoaded", function () {
             behavior: "smooth"
         });
     });
+});
+
+
+
+
+
+// Popup message functionality
+const popup = document.getElementById("popupOverlay");
+const closeBtn = document.getElementById("popupClose");
+
+// Check if popup has already been shown in this session
+const popupShown = sessionStorage.getItem("popupShown");
+
+if (!popupShown) {
+
+    // Popup appears after 4 seconds
+    setTimeout(() => {
+
+        popup.classList.add("popup-show");
+
+        // Mark popup as shown
+        sessionStorage.setItem("popupShown", "true");
+
+        // Show close button after 3 seconds
+        setTimeout(() => {
+            closeBtn.classList.add("show");
+        }, 3000);
+
+    }, 4000);
+}
+
+
+// Close popup
+closeBtn.addEventListener("click", () => {
+
+    popup.classList.remove("popup-show");
+
 });

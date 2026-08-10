@@ -1,3 +1,12 @@
+const PRODUCT_CATEGORIES = [
+    "all",
+    "Bridal Abaya",
+    "Bridal-Dubai Abaya",
+    "Party Wear Abaya",
+    "Premium Burqa",
+    "Luxury Dubai Abaya"
+];
+
 function renderProductCard(product) {
     return `
         <div class="col-lg-3 col-md-6">
@@ -15,9 +24,65 @@ function renderProductCard(product) {
         </div>`;
 }
 
-function renderCollection() {
+function renderFilterButtons() {
+    const filterContainer = document.getElementById("productFilter");
+    if (!filterContainer) return;
+
+    filterContainer.innerHTML = PRODUCT_CATEGORIES.map((category, index) => `
+        <button type="button"
+            class="product-filter-btn${index === 0 ? " active" : ""}"
+            data-category="${category}"
+            aria-pressed="${index === 0 ? "true" : "false"}">
+            ${category === "all" ? "ALL" : category}
+        </button>`).join("");
+}
+
+function setActiveFilter(selectedCategory) {
+    document.querySelectorAll("#productFilter .product-filter-btn").forEach(button => {
+        const isActive = button.dataset.category === selectedCategory;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+}
+
+function getFilteredProducts(category) {
+    if (category === "all") {
+        return products;
+    }
+
+    return products.filter(product => product.category === category);
+}
+
+function renderCollection(category = "all") {
     const productList = document.getElementById("productList");
-    if (productList) productList.innerHTML = products.map(renderProductCard).join("");
+    const noProductsMessage = document.getElementById("noProductsMessage");
+    const filteredProducts = getFilteredProducts(category);
+
+    if (productList) {
+        productList.innerHTML = filteredProducts.map(renderProductCard).join("");
+    }
+
+    if (noProductsMessage) {
+        noProductsMessage.innerHTML = filteredProducts.length === 0
+            ? `<div class="text-center py-4"><p class="no-products-message">No products available in this category.</p></div>`
+            : "";
+    }
+}
+
+function initialiseProductFilter() {
+    const filterContainer = document.getElementById("productFilter");
+    if (!filterContainer) return;
+
+    renderFilterButtons();
+
+    filterContainer.addEventListener("click", event => {
+        const button = event.target.closest("button[data-category]");
+        if (!button) return;
+
+        const category = button.dataset.category;
+        setActiveFilter(category);
+        renderCollection(category);
+    });
 }
 
 function renderSizeDetails(size) {
@@ -145,6 +210,7 @@ function renderProductDetails() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    initialiseProductFilter();
     renderCollection();
     renderProductDetails();
 });
