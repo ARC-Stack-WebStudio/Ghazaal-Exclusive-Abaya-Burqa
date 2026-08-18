@@ -51,8 +51,30 @@
         </div>
     </nav>
 
-    <!-- Under Construction Popup -->
-    <div class="popup-overlay" id="popupOverlay">
+    <!-- Featured product offer popup. Content is populated from js/products.js. -->
+    <div class="featured-product-modal" id="featuredProductModal" aria-hidden="true" role="dialog"
+        aria-modal="true" aria-labelledby="featuredProductName">
+        <div class="featured-product-modal__dialog" role="document">
+            <button class="featured-product-modal__close" type="button" aria-label="Close offer" data-featured-close>&times;</button>
+            <div class="featured-product-modal__image-wrap">
+                <span class="featured-product-modal__label">Exclusive offer</span>
+                <img id="featuredProductImage" src="" alt="">
+            </div>
+            <div class="featured-product-modal__content">
+                <p class="featured-product-modal__eyebrow">Featured this season</p>
+                <h2 id="featuredProductName">Featured Abaya</h2>
+                <p id="featuredProductDescription"></p>
+                <p class="featured-product-modal__price" id="featuredProductPrice"></p>
+                <div class="featured-product-modal__actions">
+                    <button class="featured-product-modal__quick-view" type="button" id="featuredQuickView">Quick View</button>
+                    <a class="featured-product-modal__order" id="featuredContinueOrder" href="addorder.html?id=1">Continue Order <span aria-hidden="true">&#8594;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legacy notice popup (inactive) -->
+    <!-- <div class="popup-overlay" id="popupOverlay">
 
         <div class="popup-card">
 
@@ -78,7 +100,7 @@
 
         </div>
 
-    </div>
+    </div> -->
 
     <main>
         <section id="home" class="hero-section">
@@ -698,6 +720,8 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="js/script.js"></script>
     <script src="js/bottom-nav.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/featured-product-popup.js"></script>
 </body>
 
 </html>
