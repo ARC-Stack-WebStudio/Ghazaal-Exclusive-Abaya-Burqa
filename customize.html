@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
- 
+
 </head>
 
 <body>
@@ -57,8 +57,19 @@
             <div class="customize-container px-3 px-lg-0">
                 <!-- Left: Image -->
                 <div class="customize-image-wrapper">
-                    <img src="./Images/Collection-Abayas.png" alt="Premium Dubai-style Abaya - Customize your design"
-                        class="customize-image">
+                    <!-- <img src="./Images/Collection-Abayas.png" alt="Premium Dubai-style Abaya - Customize your design"
+                        class="customize-image"> -->
+                    <div class="hero-visual">
+                        <!-- <img src="./Images/Ghazaal Banner.png" alt="Ghazaal Exclusive Abaya luxury boutique banner"> -->
+                        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+                            <source src="./video/Coustimize Abaya Video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="glass-note">
+                            <span>New Season</span>
+                            <strong>Royal Edit</strong>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Right: Customization Panel -->
@@ -118,7 +129,8 @@
                                 <span class="selection-badge inactive" id="sleeveBadge">No sleeve style selected</span>
                             </div>
                             <div class="sleeve-style-picker">
-                                <button type="button" class="sleeve-style-trigger" id="sleeveSelectTrigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="sleeveStyleOverlay">
+                                <button type="button" class="sleeve-style-trigger" id="sleeveSelectTrigger"
+                                    aria-haspopup="dialog" aria-expanded="false" aria-controls="sleeveStyleOverlay">
                                     <span class="sleeve-trigger-text" id="sleeveTriggerText">Select Sleeve Style</span>
                                     <span class="sleeve-trigger-status" aria-hidden="true">
                                         <i class="fas fa-chevron-down"></i>
@@ -126,45 +138,290 @@
                                 </button>
 
                                 <div class="sleeve-style-overlay" id="sleeveStyleOverlay" hidden>
-                                    <div class="sleeve-style-overlay-panel" role="dialog" aria-modal="true" aria-labelledby="sleeveStyleOverlayTitle">
+                                    <div class="sleeve-style-overlay-panel" role="dialog" aria-modal="true"
+                                        aria-labelledby="sleeveStyleOverlayTitle">
                                         <div class="sleeve-style-overlay-header">
                                             <h3 id="sleeveStyleOverlayTitle">Sleeve Style</h3>
-                                            <button type="button" class="sleeve-style-overlay-close" id="sleeveStyleOverlayClose" aria-label="Close sleeve style selector">
+                                            <button type="button" class="sleeve-style-overlay-close"
+                                                id="sleeveStyleOverlayClose" aria-label="Close sleeve style selector">
                                                 <i class="fas fa-times"></i>
                                             </button>
                                         </div>
 
                                         <div class="sleeve-selection-view" id="sleeveSelectionView">
-                                            <div class="sleeve-style-options" role="radiogroup" aria-label="Select Sleeve Style">
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Plain Straight" data-sleeve-image="./Images/sleeve-styles/plain-straight.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/plain-straight.jpg" alt="Plain Straight sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Plain Straight sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>1. Plain Straight</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Piped Cuff" data-sleeve-image="./Images/sleeve-styles/piped-cuff.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/piped-cuff.jpg" alt="Piped Cuff sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Piped Cuff sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>2. Piped Cuff</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Pleated Cuff" data-sleeve-image="./Images/sleeve-styles/pleated-cuff.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/pleated-cuff.jpg" alt="Pleated Cuff sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Pleated Cuff sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>3. Pleated Cuff</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Embroidered Floral" data-sleeve-image="./Images/sleeve-styles/embroidered-floral.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/embroidered-floral.jpg" alt="Embroidered Floral sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Embroidered Floral sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>4. Embroidered Floral</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Bell Sleeve" data-sleeve-image="./Images/sleeve-styles/bell-sleeve.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/bell-sleeve.jpg" alt="Bell Sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Bell Sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>5. Bell Sleeve</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Elastic Gathered" data-sleeve-image="./Images/sleeve-styles/elastic-gathered.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/elastic-gathered.jpg" alt="Elastic Gathered sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Elastic Gathered sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>6. Elastic Gathered</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Beaded Diamond" data-sleeve-image="./Images/sleeve-styles/beaded-diamond.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/beaded-diamond.jpg" alt="Beaded Diamond sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Beaded Diamond sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>7. Beaded Diamond</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Pintuck Detail" data-sleeve-image="./Images/sleeve-styles/pintuck-detail.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/pintuck-detail.jpg" alt="Pintuck Detail sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Pintuck Detail sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>8. Pintuck Detail</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Beaded Cuff" data-sleeve-image="./Images/sleeve-styles/beaded-cuff.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/beaded-cuff.jpg" alt="Beaded Cuff sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Beaded Cuff sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>9. Beaded Cuff</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Ruffle Hem" data-sleeve-image="./Images/sleeve-styles/ruffle-hem.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/ruffle-hem.jpg" alt="Ruffle Hem sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Ruffle Hem sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>10. Ruffle Hem</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Lantern Sleeve" data-sleeve-image="./Images/sleeve-styles/lantern-sleeve.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/lantern-sleeve.jpg" alt="Lantern Sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Lantern Sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>11. Lantern Sleeve</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Accordion Pleats" data-sleeve-image="./Images/sleeve-styles/accordion-pleats.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/accordion-pleats.jpg" alt="Accordion Pleats sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Accordion Pleats sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>12. Accordion Pleats</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Laser Cut Detail" data-sleeve-image="./Images/sleeve-styles/laser-cut-detail.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/laser-cut-detail.jpg" alt="Laser Cut Detail sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Laser Cut Detail sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>13. Laser Cut Detail</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Layered Frill" data-sleeve-image="./Images/sleeve-styles/layered-frill.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/layered-frill.jpg" alt="Layered Frill sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Layered Frill sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>14. Layered Frill</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Button Cuff" data-sleeve-image="./Images/sleeve-styles/button-cuff.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/button-cuff.jpg" alt="Button Cuff sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Button Cuff sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>15. Button Cuff</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Slit Cuff" data-sleeve-image="./Images/sleeve-styles/slit-cuff.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/slit-cuff.jpg" alt="Slit Cuff sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Slit Cuff sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>16. Slit Cuff</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Lace Trim" data-sleeve-image="./Images/sleeve-styles/lace-trim.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/lace-trim.jpg" alt="Lace Trim sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Lace Trim sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>17. Lace Trim</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Appliqué Detail" data-sleeve-image="./Images/sleeve-styles/applique-detail.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/applique-detail.jpg" alt="Appliqué Detail sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Appliqué Detail sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>18. Appliqué Detail</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Contrast Piping" data-sleeve-image="./Images/sleeve-styles/contrast-piping.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/contrast-piping.jpg" alt="Contrast Piping sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Contrast Piping sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>19. Contrast Piping</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
-                                                <article class="sleeve-style-option" role="radio" tabindex="0" aria-checked="false" data-sleeve-style="Smocked" data-sleeve-image="./Images/sleeve-styles/smocked.jpg"><div class="sleeve-card-image"><img src="./Images/sleeve-styles/smocked.jpg" alt="Smocked sleeve"><button type="button" class="sleeve-preview-trigger" aria-label="Preview Smocked sleeve"><i class="fas fa-expand-alt"></i></button></div><div class="sleeve-card-details"><span>20. Smocked</span><i class="fas fa-check sleeve-selected-icon" aria-hidden="true"></i></div></article>
+                                            <div class="sleeve-style-options" role="radiogroup"
+                                                aria-label="Select Sleeve Style">
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Plain Straight"
+                                                    data-sleeve-image="./Images/sleeve-styles/plain-straight.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/plain-straight.jpg"
+                                                            alt="Plain Straight sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Plain Straight sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>1. Plain Straight</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Piped Cuff"
+                                                    data-sleeve-image="./Images/sleeve-styles/piped-cuff.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/piped-cuff.jpg"
+                                                            alt="Piped Cuff sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Piped Cuff sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>2. Piped Cuff</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Pleated Cuff"
+                                                    data-sleeve-image="./Images/sleeve-styles/pleated-cuff.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/pleated-cuff.jpg"
+                                                            alt="Pleated Cuff sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Pleated Cuff sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>3. Pleated Cuff</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Embroidered Floral"
+                                                    data-sleeve-image="./Images/sleeve-styles/embroidered-floral.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/embroidered-floral.jpg"
+                                                            alt="Embroidered Floral sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Embroidered Floral sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>4. Embroidered
+                                                            Floral</span><i class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Bell Sleeve"
+                                                    data-sleeve-image="./Images/sleeve-styles/bell-sleeve.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/bell-sleeve.jpg"
+                                                            alt="Bell Sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Bell Sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>5. Bell Sleeve</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Elastic Gathered"
+                                                    data-sleeve-image="./Images/sleeve-styles/elastic-gathered.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/elastic-gathered.jpg"
+                                                            alt="Elastic Gathered sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Elastic Gathered sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>6. Elastic Gathered</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Beaded Diamond"
+                                                    data-sleeve-image="./Images/sleeve-styles/beaded-diamond.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/beaded-diamond.jpg"
+                                                            alt="Beaded Diamond sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Beaded Diamond sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>7. Beaded Diamond</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Pintuck Detail"
+                                                    data-sleeve-image="./Images/sleeve-styles/pintuck-detail.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/pintuck-detail.jpg"
+                                                            alt="Pintuck Detail sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Pintuck Detail sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>8. Pintuck Detail</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Beaded Cuff"
+                                                    data-sleeve-image="./Images/sleeve-styles/beaded-cuff.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/beaded-cuff.jpg"
+                                                            alt="Beaded Cuff sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Beaded Cuff sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>9. Beaded Cuff</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Ruffle Hem"
+                                                    data-sleeve-image="./Images/sleeve-styles/ruffle-hem.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/ruffle-hem.jpg"
+                                                            alt="Ruffle Hem sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Ruffle Hem sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>10. Ruffle Hem</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Lantern Sleeve"
+                                                    data-sleeve-image="./Images/sleeve-styles/lantern-sleeve.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/lantern-sleeve.jpg"
+                                                            alt="Lantern Sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Lantern Sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>11. Lantern Sleeve</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Accordion Pleats"
+                                                    data-sleeve-image="./Images/sleeve-styles/accordion-pleats.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/accordion-pleats.jpg"
+                                                            alt="Accordion Pleats sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Accordion Pleats sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>12. Accordion Pleats</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Laser Cut Detail"
+                                                    data-sleeve-image="./Images/sleeve-styles/laser-cut-detail.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/laser-cut-detail.jpg"
+                                                            alt="Laser Cut Detail sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Laser Cut Detail sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>13. Laser Cut Detail</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Layered Frill"
+                                                    data-sleeve-image="./Images/sleeve-styles/layered-frill.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/layered-frill.jpg"
+                                                            alt="Layered Frill sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Layered Frill sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>14. Layered Frill</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Button Cuff"
+                                                    data-sleeve-image="./Images/sleeve-styles/button-cuff.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/button-cuff.jpg"
+                                                            alt="Button Cuff sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Button Cuff sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>15. Button Cuff</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Slit Cuff"
+                                                    data-sleeve-image="./Images/sleeve-styles/slit-cuff.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/slit-cuff.jpg"
+                                                            alt="Slit Cuff sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Slit Cuff sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>16. Slit Cuff</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Lace Trim"
+                                                    data-sleeve-image="./Images/sleeve-styles/lace-trim.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/lace-trim.jpg"
+                                                            alt="Lace Trim sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Lace Trim sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>17. Lace Trim</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Appliqué Detail"
+                                                    data-sleeve-image="./Images/sleeve-styles/applique-detail.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/applique-detail.jpg"
+                                                            alt="Appliqué Detail sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Appliqué Detail sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>18. Appliqué Detail</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Contrast Piping"
+                                                    data-sleeve-image="./Images/sleeve-styles/contrast-piping.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/contrast-piping.jpg"
+                                                            alt="Contrast Piping sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Contrast Piping sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>19. Contrast Piping</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
+                                                <article class="sleeve-style-option" role="radio" tabindex="0"
+                                                    aria-checked="false" data-sleeve-style="Smocked"
+                                                    data-sleeve-image="./Images/sleeve-styles/smocked.jpg">
+                                                    <div class="sleeve-card-image"><img
+                                                            src="./Images/sleeve-styles/smocked.jpg"
+                                                            alt="Smocked sleeve"><button type="button"
+                                                            class="sleeve-preview-trigger"
+                                                            aria-label="Preview Smocked sleeve"><i
+                                                                class="fas fa-expand-alt"></i></button></div>
+                                                    <div class="sleeve-card-details"><span>20. Smocked</span><i
+                                                            class="fas fa-check sleeve-selected-icon"
+                                                            aria-hidden="true"></i></div>
+                                                </article>
                                             </div>
                                         </div>
 
                                         <div class="sleeve-preview-view" id="sleevePreviewView" hidden>
                                             <div class="sleeve-preview-toolbar">
-                                                <button type="button" class="sleeve-preview-close" id="sleevePreviewClose" aria-label="Close sleeve preview">
+                                                <button type="button" class="sleeve-preview-close"
+                                                    id="sleevePreviewClose" aria-label="Close sleeve preview">
                                                     <i class="fas fa-times"></i>
                                                 </button>
-                                                <button type="button" class="sleeve-preview-select" id="sleevePreviewSelect" aria-label="Select sleeve style">
+                                                <button type="button" class="sleeve-preview-select"
+                                                    id="sleevePreviewSelect" aria-label="Select sleeve style">
                                                     <i class="fas fa-check"></i>
                                                 </button>
                                             </div>
@@ -187,8 +444,11 @@
                                     <h2>Upload Your Reference Design on WhatsApp</h2>
                                 </div>
                             </div>
-                            <p>After submitting this customization form, please upload your reference <strong>photo or video directly on WhatsApp</strong>. Our design team will review your reference and prepare your custom abaya accordingly.</p>
-                            <p class="instruction-highlight"><strong>Please upload your reference photo or video on WhatsApp after submitting this form.</strong></p>
+                            <p>After submitting this customization form, please upload your reference <strong>photo or
+                                    video directly on WhatsApp</strong>. Our design team will review your reference and
+                                prepare your custom abaya accordingly.</p>
+                            <p class="instruction-highlight"><strong>Please upload your reference photo or video on
+                                    WhatsApp after submitting this form.</strong></p>
                         </div>
                     </div>
 
