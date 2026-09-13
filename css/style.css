@@ -1070,10 +1070,12 @@ h6 {
 
 .product-gallery__arrow--previous {
     left: 18px;
+    display: none;
 }
 
 .product-gallery__arrow--next {
     right: 18px;
+    display: none;
 }
 
 .product-gallery__dots {
