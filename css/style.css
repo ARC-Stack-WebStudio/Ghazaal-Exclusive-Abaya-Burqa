@@ -1083,6 +1083,7 @@ h6 {
     justify-content: center;
     gap: 8px;
     padding-top: 16px;
+    display: none !important;
 }
 
 .product-gallery__dot {
