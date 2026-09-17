@@ -35,8 +35,6 @@ const products = [
     { id: 33, name: "AVC-Dubai Abaya ", category: "Bridal-Dubai Abaya", price: 2399, image: "./Product Img/79.29.png", imagetwo: "./Clean Img/black1 (3).png", imagethree: "./Clean Img/black1.png", description: "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.", fabricDetails: ["Luxury Imported Fabric", "Detailed Bridal Finish", "Soft Inner Lining", "Premium Tailoring"] }
     
 
-
-
 ];
 
 const whatsappNumber = "919769443142";
