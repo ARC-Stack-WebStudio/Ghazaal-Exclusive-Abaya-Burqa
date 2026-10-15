@@ -3,17 +3,35 @@
     if (!orderPage) return;
 
     const urlParams = new URLSearchParams(window.location.search);
+    const cartMode = urlParams.get("cart") === "1";
     const product = products.find((item) => String(item.id) === urlParams.get("id"));
-    if (!product) {
+    let cartItems = [];
+    if (cartMode) {
+        try {
+            cartItems = window.GhazaalCart.getItems();
+        } catch (error) {
+            console.error("Unable to load the saved cart.", error);
+            document.title = "Cart Unavailable | Ghazaal Exclusive Abaya";
+            orderPage.innerHTML = `<div class="col-12"><div class="contact-form text-center"><h1>Cart unavailable</h1><p>Your saved cart could not be read. Please check your browser storage settings and try again.</p><a href="collection.html" class="btn btn-gold">Continue Shopping</a></div></div>`;
+            return;
+        }
+    }
+    if (!cartMode && !product) {
         document.title = "Product Not Found | Ghazaal Exclusive Abaya";
         orderPage.innerHTML = `<div class="col-12 text-center"><h1>Product not found</h1><p>The product you selected is unavailable.</p><a href="collection.html" class="btn btn-gold">Back To Collection</a></div>`;
         return;
     }
 
+    if (cartMode && !cartItems.length) {
+        document.title = "Your Cart | Ghazaal Exclusive Abaya";
+        orderPage.innerHTML = `<div class="col-12"><div class="contact-form text-center"><span class="eyebrow">Your Cart</span><h1>Your cart is empty</h1><p>Add products from the collection and they will be saved here.</p><a href="collection.html" class="btn btn-gold">Continue Shopping</a></div></div>`;
+        return;
+    }
+
     const selectedSize = urlParams.get("size");
-    const sizes = product.sizes || [ "L", "XL", "XXL", "3XL"];
-    const fabric = product.fabricDetails.join(", ");
-    const category = product.category || (product.name.toLowerCase().includes("burqa") ? "Burqa" : "Abaya");
+    const sizes = product ? product.sizes || ["L", "XL", "XXL", "3XL"] : [];
+    const fabric = product ? product.fabricDetails.join(", ") : "";
+    const category = product ? product.category || (product.name.toLowerCase().includes("burqa") ? "Burqa" : "Abaya") : "";
     const cityData = {
         ahmedabad: { city: "Ahmedabad", state: "Gujarat", pincode: "380001", pincodes: ["380001", "380015", "380054"], shipping: "₹280 - ₹330" },
         aurangabad: { city: "Aurangabad", state: "Maharashtra", pincode: "431001", pincodes: ["431001", "431005", "431136"], shipping: "₹280 - ₹330" },
@@ -33,17 +51,29 @@
     ];
     const formatPrice = (price) => new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(price);
     const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[character]));
+    const renderCartItems = () => cartItems.map((item) => `
+        <li class="list-group-item d-flex align-items-center gap-3">
+            <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" width="72" height="88" class="rounded" style="object-fit:cover;">
+            <div class="flex-grow-1">
+                <strong>${escapeHtml(item.name)}</strong>
+                <div>Size: ${escapeHtml(item.size)} · Quantity: ${item.quantity}</div>
+                <div>${formatPrice(item.price)} each</div>
+            </div>
+            <button type="button" class="btn btn-gold btn-sm" data-remove-cart-item="${escapeHtml(item.lineId)}" aria-label="Remove ${escapeHtml(item.name)} from cart">Remove</button>
+        </li>`).join("");
 
-    document.title = `Order ${product.name} | Ghazaal Exclusive Abaya`;
+    document.title = cartMode ? "Your Cart | Ghazaal Exclusive Abaya" : `Order ${product.name} | Ghazaal Exclusive Abaya`;
     orderPage.innerHTML = `
         <div class="col-lg-5"><div class="contact-form h-100">
-            <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="img-fluid rounded mb-3" style="max-height:500px; width:100%; object-fit:cover;">
+            ${cartMode
+            ? `<span class="eyebrow">Your Cart (${cartItems.length})</span><h1 class="mb-3">Cart Items</h1><ol id="cartItems" class="list-group list-group-numbered mb-3">${renderCartItems()}</ol><a href="collection.html" class="btn btn-gold cart-btn-size">Continue Shopping</a>`
+            : `<img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" class="img-fluid rounded mb-3" style="max-height:500px; width:100%; object-fit:cover;">
             ${product.badge ? `<span class="badge bg-warning text-dark align-self-start">${escapeHtml(product.badge)}</span>` : ""}
             <h1 class="mb-0">${escapeHtml(product.name)}</h1><h3 style="color:#b18e1e;">${formatPrice(product.price)}</h3>
-            <p class="mb-2">${escapeHtml(product.description)}</p><div class="border-top pt-3 small"><p class="mb-2"><strong>Fabric:</strong> ${escapeHtml(fabric)}</p><p class="mb-0"><strong>Category:</strong> ${escapeHtml(category)}</p></div>
+            <p class="mb-2">${escapeHtml(product.description)}</p><div class="border-top pt-3 small"><p class="mb-2"><strong>Fabric:</strong> ${escapeHtml(fabric)}</p><p class="mb-0"><strong>Category:</strong> ${escapeHtml(category)}</p></div>`}
         </div></div>
         <div class="col-lg-7"><form id="orderForm" class="contact-form" novalidate>
-            <div><span class="eyebrow">Secure Order Request</span><h2 class="mb-1">Complete Your Order</h2><p class="mb-0">Your product details have been selected. Fill in your delivery details to continue on WhatsApp.</p></div>
+            <div><span class="eyebrow">Secure Order Request</span><h2 class="mb-1">${cartMode ? "Complete Your Cart Order" : "Complete Your Order"}</h2><p class="mb-0">${cartMode ? "Fill in your delivery details to send all cart items together on WhatsApp." : "Your product details have been selected. Fill in your delivery details to continue on WhatsApp."}</p></div>
             <div class="row g-3">
                 <div class="col-md-6"><label for="customerName" class="form-label">Customer Name *</label><input id="customerName" name="customerName" class="form-control" required maxlength="50" autocomplete="name"><div class="invalid-feedback">Name must contain only letters and spaces (3–50 characters).</div></div>
                 <div class="col-md-6"><label for="mobile" class="form-label">Mobile Number *</label><input id="mobile" name="mobile" class="form-control" type="tel" required maxlength="14" inputmode="numeric" autocomplete="tel"><div class="invalid-feedback">Please enter a valid 10-digit Indian mobile number.</div></div>
@@ -57,17 +87,21 @@
                 <div class="col-md-4"><label for="pincode" class="form-label">Pincode *</label><input id="pincode" name="pincode" class="form-control" required inputmode="numeric" autocomplete="postal-code" list="pincodeSuggestions"><datalist id="pincodeSuggestions"></datalist><div class="invalid-feedback">Please enter a valid 6-digit pincode.</div></div>
                 <div class="col-md-6"><label for="country" class="form-label">Country</label><input id="country" name="country" class="form-control" value="India" autocomplete="country-name"></div>
                 <div class="col-md-6"> <label for="shippingCharge" class="form-label"> Shipping Charges </label> <input  id="shippingCharge"  name="shippingCharge"  class="form-control"  readonly  placeholder="Will auto-fill"> </div>
-                <div class="col-md-3"><label for="size" class="form-label">Size *</label><select id="size" name="size" class="form-select form-control" required><option value="">Select size</option>${sizes.map((size) => `<option value="${escapeHtml(size)}">${escapeHtml(size)}</option>`).join("")}</select><div class="invalid-feedback">Please select a size.</div></div>
-                <div class="col-md-3"><label for="quantity" class="form-label">Quantity *</label><input id="quantity" name="quantity" class="form-control" type="number" min="1" value="1" required inputmode="numeric"><div class="invalid-feedback">Enter a quantity of at least 1.</div></div>
+                ${cartMode ? "" : `<div class="col-md-3"><label for="size" class="form-label">Size *</label><select id="size" name="size" class="form-select form-control" required><option value="">Select size</option>${sizes.map((size) => `<option value="${escapeHtml(size)}">${escapeHtml(size)}</option>`).join("")}</select><div class="invalid-feedback">Please select a size.</div></div>
+                <div class="col-md-3"><label for="quantity" class="form-label">Quantity *</label><input id="quantity" name="quantity" class="form-control" type="number" min="1" value="1" required inputmode="numeric"><div class="invalid-feedback">Enter a quantity of at least 1.</div></div>`}
             </div>
-            <div class="d-flex flex-wrap gap-3 pt-2"><button type="submit" class="btn btn-success"><i class="fab fa-whatsapp"></i> Place Order on WhatsApp</button><a href="product-details.html?id=${encodeURIComponent(product.id)}" class="btn btn-gold">Back to Product</a></div>
+            <div class="d-flex flex-wrap gap-3 pt-2"><button type="submit" class="btn btn-success"><i class="fab fa-whatsapp"></i> Place Order on WhatsApp</button>${cartMode
+            ? `<a href="collection.html" class="btn btn-gold">Back To Shopping</a>`
+            : `<button type="button" id="addToCart" class="btn btn-gold"><i class="fas fa-cart-plus"></i> Add to Cart</button><a href="product-details.html?id=${encodeURIComponent(product.id)}" class="btn btn-gold">Back to Product</a>`}</div>
         </form></div>`;
 
     const form = document.getElementById("orderForm");
-    const fields = Object.fromEntries(["customerName", "mobile", "email", "house", "street", "area", "landmark", "city", "state", "pincode", "size", "quantity"].map((id) => [id, document.getElementById(id)]));
+    const fieldNames = ["customerName", "mobile", "email", "house", "street", "area", "landmark", "city", "state", "pincode"];
+    if (!cartMode) fieldNames.push("size", "quantity");
+    const fields = Object.fromEntries(fieldNames.map((id) => [id, document.getElementById(id)]));
     const country = document.getElementById("country");
     const shippingCharge = document.getElementById("shippingCharge");
-    const lockedSize = selectedSize && sizes.includes(selectedSize) ? selectedSize : "";
+    const lockedSize = !cartMode && selectedSize && sizes.includes(selectedSize) ? selectedSize : "";
     const pincodeSuggestions = document.getElementById("pincodeSuggestions");
 
     // Turns words into title case while retaining spaces between them.
@@ -164,11 +198,49 @@
     fields.pincode.addEventListener("input", () => { fields.pincode.value = fields.pincode.value.replace(/\D/g, "").slice(0, 6); validateField(fields.pincode); });
     fields.state.addEventListener("input", () => { fields.state.value = toProperCase(fields.state.value); validateField(fields.state); });
     country.addEventListener("input", () => { country.value = toProperCase(country.value); });
-    [fields.email, fields.size, fields.quantity].forEach((field) => field.addEventListener("input", () => validateField(field)));
+    [fields.email, fields.size, fields.quantity].filter(Boolean).forEach((field) => field.addEventListener("input", () => validateField(field)));
     fields.city.addEventListener("change", () => { clearTimeout(cityLookupTimer); updateCitySuggestions(); validateField(fields.city); });
     fields.city.addEventListener("blur", () => { clearTimeout(cityLookupTimer); updateCitySuggestions(); });
     fields.state.addEventListener("change", () => validateField(fields.state));
-    fields.size.addEventListener("change", () => validateField(fields.size));
+    fields.size?.addEventListener("change", () => validateField(fields.size));
+
+    const addToCartButton = document.getElementById("addToCart");
+    addToCartButton?.addEventListener("click", () => {
+        const selectionIsValid = validateField(fields.size) && validateField(fields.quantity);
+        if (!selectionIsValid) {
+            fields.size.focus();
+            return;
+        }
+
+        try {
+            window.GhazaalCart.addItem(product, fields.size.value, Number(fields.quantity.value));
+            window.location.href = "collection.html";
+        } catch (error) {
+            console.error("Unable to save the selected product to the cart.", error);
+            window.alert("Your item could not be saved to the cart. Please check your browser storage settings and try again.");
+        }
+    });
+
+    const cartList = document.getElementById("cartItems");
+    cartList?.addEventListener("click", (event) => {
+        const removeButton = event.target.closest("[data-remove-cart-item]");
+        if (!removeButton) return;
+
+        try {
+            window.GhazaalCart.removeItem(removeButton.dataset.removeCartItem);
+            cartItems = window.GhazaalCart.getItems();
+            if (!cartItems.length) {
+                window.location.reload();
+                return;
+            }
+            cartList.innerHTML = renderCartItems();
+            const cartHeading = orderPage.querySelector(".eyebrow");
+            cartHeading.textContent = `Your Cart (${cartItems.length})`;
+        } catch (error) {
+            console.error("Unable to remove the cart item.", error);
+            window.alert("The item could not be removed from your cart. Please try again.");
+        }
+    });
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -183,9 +255,10 @@
         }
 
         const data = new FormData(form);
-        const quantity = Number(data.get("quantity"));
-
-        const productTotal = product.price * quantity;
+        const quantity = cartMode ? 0 : Number(data.get("quantity"));
+        const productTotal = cartMode
+            ? cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+            : product.price * quantity;
 
         // If shippingCharge is an input field
         const shippingText = shippingCharge.value || "₹0";
@@ -195,7 +268,44 @@
 
         const grandTotal = productTotal + shippingAmount;
         // const message = `🛍️ NEW ORDER\n\n----------------------------------\n\nCustomer Details\n\nName:\n${data.get("customerName")}\n\nMobile:\n${data.get("mobile")}\n\nEmail:\n${data.get("email") || "Not provided"}\n\n----------------------------------\n\nDelivery Address\n\nHouse:\n${data.get("house")}\n\nStreet:\n${data.get("street")}\n\nArea:\n${data.get("area")}\n\nLandmark:\n${data.get("landmark") || "Not provided"}\n\nCity:\n${data.get("city")}\n\nState:\n${data.get("state")}\n\nPincode:\n${data.get("pincode")}\n\nCountry:\n${data.get("country") || "India"}\n\n----------------------------------\n\nProduct Details\n\nProduct:\n${product.name}\n\nPrice:\n₹${product.price}\n\nSize:\n${data.get("size")}\n\nQuantity:\n${quantity}\n\nFabric:\n${fabric}\n\nCategory:\n${category}\n\n----------------------------------\n\nTotal Price\n\n₹ ${product.price * quantity}\n\n----------------------------------\n\nThank You.`;
-        const message = `*🛍️ NEW ORDER REQUEST*
+        let message;
+        if (cartMode) {
+            const customerItems = cartItems.map((item, index) => {
+                const itemFabric = item.fabricDetails.join(", ") || "Not specified";
+                return `${index + 1}. Product: ${item.name} (ID: ${item.productId})
+   Category: ${item.category || "Not specified"}
+   Fabric: ${itemFabric}
+   Size: ${item.size}
+   Quantity: ${item.quantity}
+   Price: ${formatPrice(item.price)} each
+   Item Total: ${formatPrice(item.price * item.quantity)}`;
+            }).join("\n\n");
+            message = `*Ghazaal Exclusive Abaya — Order Request*
+
+CUSTOMER DETAILS
+Name: ${data.get("customerName")}
+Mobile: ${data.get("mobile")}
+Email: ${data.get("email") || "Not Provided"}
+
+DELIVERY ADDRESS
+House / Flat: ${data.get("house")}
+Street: ${data.get("street")}
+Area: ${data.get("area")}
+Landmark: ${data.get("landmark") || "Not Provided"}
+City: ${data.get("city")}
+State: ${data.get("state")}
+Pincode: ${data.get("pincode")}
+Country: ${data.get("country") || "India"}
+
+ORDER ITEMS
+${customerItems}
+
+Product Total: ${formatPrice(productTotal)}
+Shipping Charges: ${shippingText}
+
+Thank you for shopping with Ghazaal Exclusive Abaya. Our team will contact you shortly to confirm your order.`;
+        } else {
+            message = `*🛍️ NEW ORDER REQUEST*
 
             ━━━━━━━━━━━━━━━━━━━━━━
             👤 *CUSTOMER DETAILS*
@@ -282,6 +392,7 @@
             🙏 Thank you for shopping with *Ghazaal Exclusive Abaya*.
 
         Our team will contact you shortly to confirm your order. ❤️`;
+        }
         const reviewRequest = `
 
 🌸 Thank You for Choosing Ghazaal Exclusive Abaya!
@@ -295,10 +406,28 @@ Once you receive your order, we would be truly grateful if you could take a minu
 👉 Leave Your Review Here:
 https://www.google.com/maps/place//@19.3001006,73.0554429,17z/data=!3m1!4b1!4m3!3m2!1s0x3be7bd66793a6439:0x2bef66bd1192dac9!12e1?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D
 
-JazakAllah Khair for your love and support.
+Thankyou so much for your love and support.
 We look forward to serving you again! 🤍
 — Ghazaal Exclusive Abaya`;
 
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message + reviewRequest)}`, "_blank", "noopener");
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message + reviewRequest)}`;
+        if (cartMode) {
+            const whatsappWindow = window.open("about:blank", "_blank");
+            if (!whatsappWindow) {
+                window.alert("Please allow pop-ups to open WhatsApp. Your cart has been kept.");
+                return;
+            }
+            whatsappWindow.opener = null;
+            whatsappWindow.location.href = whatsappUrl;
+            try {
+                window.GhazaalCart.clear();
+                orderPage.innerHTML = `<div class="col-12"><div class="contact-form text-center"><span class="eyebrow">Order Request Started</span><h1>WhatsApp order opened</h1><p>Your cart has been cleared. Complete sending your order in WhatsApp.</p><a href="collection.html" class="btn btn-gold">Continue Shopping</a></div></div>`;
+            } catch (error) {
+                console.error("WhatsApp opened, but the cart could not be cleared.", error);
+                window.alert("WhatsApp opened, but your cart could not be cleared. Please remove the items manually after sending the order.");
+            }
+            return;
+        }
+        window.open(whatsappUrl, "_blank", "noopener");
     });
 })();
