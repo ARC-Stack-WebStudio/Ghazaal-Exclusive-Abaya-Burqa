@@ -100,6 +100,8 @@
     if (!cartMode) fieldNames.push("size", "quantity");
     const fields = Object.fromEntries(fieldNames.map((id) => [id, document.getElementById(id)]));
     const country = document.getElementById("country");
+    const customerInfoStorageKey = "ghazaal-exclusive-abaya-customer-info";
+    const customerInfoFields = [...Object.values(fields).filter((field) => !["size", "quantity"].includes(field.id)), country];
     const shippingCharge = document.getElementById("shippingCharge");
     const lockedSize = !cartMode && selectedSize && sizes.includes(selectedSize) ? selectedSize : "";
     const pincodeSuggestions = document.getElementById("pincodeSuggestions");
@@ -173,6 +175,8 @@
     };
 
     fields.mobile.value = "+91 ";
+    try { const savedCustomerInfo = JSON.parse(localStorage.getItem(customerInfoStorageKey) || "{}"); customerInfoFields.forEach((field) => { if (typeof savedCustomerInfo[field.name] === "string") field.value = savedCustomerInfo[field.name]; }); } catch (error) { console.error("Unable to restore saved customer information.", error); }
+    const saveCustomerInformation = () => { const customerInfo = Object.fromEntries(customerInfoFields.map((field) => [field.name, field.value])); try { localStorage.setItem(customerInfoStorageKey, JSON.stringify(customerInfo)); } catch (error) { console.error("Unable to save customer information.", error); } };
     // Keeps the transferred product size visible and read-only without changing its dropdown appearance.
     if (lockedSize) {
         fields.size.value = lockedSize;
@@ -203,6 +207,7 @@
     fields.city.addEventListener("blur", () => { clearTimeout(cityLookupTimer); updateCitySuggestions(); });
     fields.state.addEventListener("change", () => validateField(fields.state));
     fields.size?.addEventListener("change", () => validateField(fields.size));
+    customerInfoFields.forEach((field) => { field.addEventListener("input", saveCustomerInformation); field.addEventListener("change", saveCustomerInformation); });
 
     const addToCartButton = document.getElementById("addToCart");
     addToCartButton?.addEventListener("click", () => {
@@ -213,6 +218,7 @@
         }
 
         try {
+            saveCustomerInformation();
             window.GhazaalCart.addItem(product, fields.size.value, Number(fields.quantity.value));
             window.location.href = "collection.html";
         } catch (error) {
