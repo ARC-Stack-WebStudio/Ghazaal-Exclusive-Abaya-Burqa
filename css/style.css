@@ -1517,6 +1517,10 @@ body::selection {
     box-shadow: 0 14px 30px rgba(205, 167, 109, 0.28);
 }
 
+.cart-btn-size{
+    height: 50px;
+}
+
 .btn-gold:hover,
 .btn-gold:focus,
 .btn-warning:hover,
@@ -1871,6 +1875,11 @@ select.form-control {
         display: grid;
         padding: 36px 30px;
     }
+
+    .instagram-float{
+     right: 26px;
+     bottom: 172px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1970,6 +1979,11 @@ select.form-control {
 
     .retail-cta__actions .btn {
         width: 100%;
+    }
+
+     .instagram-float{
+     right: 18px;
+     bottom: 172px;
     }
 }
 
