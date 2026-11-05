@@ -3526,3 +3526,22 @@ body.featured-product-modal-open {
     .featured-product-modal__content { padding: 28px 24px 26px; }
     .featured-product-modal__content h2 { font-size: 2.1rem; }
 }
+
+
+
+.footer-credit {
+    font-size: 14px;
+    margin-top: -8px;
+    color: #aaa;
+}
+
+.footer-credit a {
+    color: #D5B587;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-credit a:hover {
+    color: #fff;
+}
