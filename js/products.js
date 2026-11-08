@@ -275,23 +275,24 @@ const products = [
       "Dupatta: Imported",
     ],
   },
-  {
-    id: 17,
-    name: "AVC-Dubai Abaya ",
-    category: "Bridal-Dubai Abaya",
-    price: 2399,
-    image: "./Product Img/63.13.png",
-    imagetwo: "./Clean Img/black1 (3).png",
-    imagethree: "./Clean Img/black1.png",
-    description:
-      "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
-    fabricDetails: [
-      "Luxury Imported Fabric",
-      "Detailed Bridal Finish",
-      "Soft Inner Lining",
-      "Premium Tailoring",
-    ],
-  },
+  // Same image in ./Product Img/52.png
+  // {
+  //   id: 17,
+  //   name: "AVC-Dubai Abaya ",
+  //   category: "Bridal-Dubai Abaya",
+  //   price: 2399,
+  //   image: "./Product Img/63.13.png",
+  //   imagetwo: "./Clean Img/black1 (3).png",
+  //   imagethree: "./Clean Img/black1.png",
+  //   description:
+  //     "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+  //   fabricDetails: [
+  //     "Luxury Imported Fabric",
+  //     "Detailed Bridal Finish",
+  //     "Soft Inner Lining",
+  //     "Premium Tailoring",
+  //   ],
+  // },
   {
     id: 18,
     name: "Bridal Abaya ~",
@@ -309,23 +310,24 @@ const products = [
       "Dupatta: Imported",
     ],
   },
-  {
-    id: 19,
-    name: "Party Wear Abaya",
-    category: "Party Wear Abaya",
-    price: 3399,
-    image: "./Product Img/65.15.png",
-    imagetwo: "./Clean Img/blue1 (3).png",
-    imagethree: "./Clean Img/blue1 (4).png",
-    description:
-      "An elegant party-wear Abaya with a refined silhouette and premium finish, made to make every special occasion feel graceful.",
-    fabricDetails: [
-      "Premium Nida Fabric",
-      "Elegant Party Finish",
-      "Lightweight & Flowing",
-      "Comfortable All-Day Wear",
-    ],
-  },
+  // same image in src="./Product Img/54.4.png"
+  // {
+  //   id: 19,
+  //   name: "Party Wear Abaya",
+  //   category: "Party Wear Abaya",
+  //   price: 3399,
+  //   image: "./Product Img/65.15.png",
+  //   imagetwo: "./Clean Img/blue1 (3).png",
+  //   imagethree: "./Clean Img/blue1 (4).png",
+  //   description:
+  //     "An elegant party-wear Abaya with a refined silhouette and premium finish, made to make every special occasion feel graceful.",
+  //   fabricDetails: [
+  //     "Premium Nida Fabric",
+  //     "Elegant Party Finish",
+  //     "Lightweight & Flowing",
+  //     "Comfortable All-Day Wear",
+  //   ],
+  // },
   {
     id: 20,
     name: "Party Wear Abaya ~",
@@ -357,23 +359,24 @@ const products = [
       "Soft & Comfortable",
     ],
   },
-  {
-    id: 22,
-    name: "Luxury Dubai Abaya",
-    category: "Luxury Dubai Abaya",
-    price: 2499,
-    image: "./Product Img/68.18.png",
-    imagetwo: "./Clean Img/green1 (3).png",
-    imagethree: "./Clean Img/green1.png",
-    description:
-      "Premium Dubai-style Abaya crafted with elegant fabric, luxury finishing and a modern Islamic fashion design. Perfect for casual wear, events and special occasions.",
-    fabricDetails: [
-      "Nida Fabric",
-      "Premium Imported Material",
-      "Soft & Comfortable",
-      "Wrinkle Resistant",
-    ],
-  },
+  // same image in src="./Product Img/59.9.png"
+  // {
+  //   id: 22,
+  //   name: "Luxury Dubai Abaya",
+  //   category: "Luxury Dubai Abaya",
+  //   price: 2499,
+  //   image: "./Product Img/68.18.png",
+  //   imagetwo: "./Clean Img/green1 (3).png",
+  //   imagethree: "./Clean Img/green1.png",
+  //   description:
+  //     "Premium Dubai-style Abaya crafted with elegant fabric, luxury finishing and a modern Islamic fashion design. Perfect for casual wear, events and special occasions.",
+  //   fabricDetails: [
+  //     "Nida Fabric",
+  //     "Premium Imported Material",
+  //     "Soft & Comfortable",
+  //     "Wrinkle Resistant",
+  //   ],
+  // },
   {
     id: 23,
     name: "Bridal Abaya ~",
@@ -390,23 +393,24 @@ const products = [
       "Crystal Size: No 1",
     ],
   },
-  {
-    id: 24,
-    name: "Bridal-Dubai Abaya ",
-    category: "Bridal-Dubai Abaya",
-    price: 2399,
-    image: "./Product Img/70.20.png",
-    imagetwo: "./Clean Img/black1 (3).png",
-    imagethree: "./Clean Img/black1.png",
-    description:
-      "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
-    fabricDetails: [
-      "Luxury Imported Fabric",
-      "Detailed Bridal Finish",
-      "Soft Inner Lining",
-      "Premium Tailoring",
-    ],
-  },
+  //    same image in /Product Img/54.4.png
+  // {
+  //   id: 24,
+  //   name: "Bridal-Dubai Abaya ",
+  //   category: "Bridal-Dubai Abaya",
+  //   price: 2399,
+  //   image: "./Product Img/70.20.png",
+  //   imagetwo: "./Clean Img/black1 (3).png",
+  //   imagethree: "./Clean Img/black1.png",
+  //   description:
+  //     "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+  //   fabricDetails: [
+  //     "Luxury Imported Fabric",
+  //     "Detailed Bridal Finish",
+  //     "Soft Inner Lining",
+  //     "Premium Tailoring",
+  //   ],
+  // },
   {
     id: 25,
     name: "AVC-Dubai Abaya ~",
@@ -441,19 +445,20 @@ const products = [
   },
   {
     id: 27,
-    name: "AVC-Dubai Abaya ",
-    category: "Bridal-Dubai Abaya",
-    price: 2399,
+    name: "Party Wear Abaya ~",
+    category: "Party Wear Abaya",
+    price: 4950,
     image: "./Product Img/73.23.png",
     imagetwo: "./Clean Img/black1 (3).png",
     imagethree: "./Clean Img/black1.png",
     description:
-      "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+      "An elegant party-wear Abaya with a refined silhouette and premium finish, made to make every special occasion feel graceful.",
     fabricDetails: [
-      "Luxury Imported Fabric",
-      "Detailed Bridal Finish",
-      "Soft Inner Lining",
-      "Premium Tailoring",
+      "Model No: GA1024",
+      "Fabric: Amira Gold",
+      "Imported Duppata ",
+      "Handwork Material: Japan Black Cutdana",
+      "Lightweight & Flowing",
     ],
   },
   {
@@ -554,6 +559,66 @@ const products = [
       "Dupatta: Imported",
     ],
   },
+  {
+    id: 34,
+    name: "AVC-Dubai Abaya ~",
+    category: "Bridal-Dubai Abaya",
+    price: 5200,
+    image: "./Product Img/Model no-GA1047.jpeg",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1047",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana with Pearl",
+      "Dupatta: Imported",
+    ],
+  },
+   {
+    id: 35,
+    name: "AVC-Dubai Abaya ~",
+    category: "Bridal-Dubai Abaya",
+    price: 6200,
+    image: "./Product Img/Model no-GA1048.jpeg",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1048",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana with Pearl",
+      "Dupatta: Imported",
+    ],
+  },
+  {
+    id: 36,
+    name: "AVC-Dubai Abaya ~",
+    category: "Bridal-Dubai Abaya",
+    price: 7500,
+    image: "./Product Img/Model no-GA1049.jpeg",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1049",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana with Pearl",
+      "Dupatta: Imported",
+    ],
+  },
+  {
+    id: 37,
+    name: "AVC-Dubai Abaya ~",
+    category: "Bridal-Dubai Abaya",
+    price: 6800,
+    image: "./Product Img/Model no-GA1050.jpeg",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1050",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana with Pearl",
+      "Dupatta: Imported",
+    ],
+  }
 ];
 
 const whatsappNumber = "919769443142";
