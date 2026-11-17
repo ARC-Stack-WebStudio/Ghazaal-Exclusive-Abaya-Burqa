@@ -364,11 +364,42 @@ h6 {
     transition: var(--transition);
 }
 
+.btn-customize-whatsapp{
+    background: var(--primary-dark);
+    border: 1px solid var(--primary-gold);
+    color: var(--white);
+    box-shadow: 0 16px 32px rgba(205, 167, 109, 0.25);
+}
+
+.btn-customize-whatsapp:hover{
+    background: #25D366;;
+    border: 1px solid var(--primary-gold);
+    color: var(--white);
+    box-shadow: 0 16px 32px rgba(205, 167, 109, 0.25);
+}
+
+.btn-customize-collection{
+    border: 2px solid var(--primary-gold);
+    color: var(--white);
+    box-shadow: 0 16px 32px rgba(205, 167, 109, 0.25);
+}
+
+.btn-customize-collection:hover{
+    background: var(--primary-dark);
+    border: 2px solid var(--primary-gold);
+    color: var(--white);
+    box-shadow: 0 16px 32px rgba(205, 167, 109, 0.25);
+}
+
 .btn-gold {
     background: var(--primary-dark);
     border: 1px solid var(--primary-gold);
     color: var(--white);
     box-shadow: 0 16px 32px rgba(205, 167, 109, 0.25);
+}
+
+.instruction-title{
+    color: red;
 }
 
 .btn-gold:hover,
