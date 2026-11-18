@@ -3611,6 +3611,13 @@ body.featured-product-modal-open {
     }
 }
 
+@media (max-width: 632px) {
+  .footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 548px) {
     #backToTop {
         bottom: 250px !important;
