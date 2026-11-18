@@ -3588,6 +3588,22 @@ body.featured-product-modal-open {
     color: #fff;
 }
 
+@media (max-width: 1199px) {
+ .product-filter{
+    justify-content:normal;
+ }
+
+ .customize-cta .btn-customize-whatsapp{
+    margin-bottom: 9px;
+ }
+}
+
+@media (max-width: 991px) {
+ .customize-cta .btn-customize-whatsapp{
+    margin-bottom: 0px;
+ }
+}
+
 @media (max-width: 768px) {
     #backToTop {
         bottom: 250px !important;
