@@ -3545,6 +3545,10 @@ body.featured-product-modal-open {
     background: #1d1a17;
     color: #fff;
 }
+.list-unstyled{
+    font-weight: bolder;
+    color: var(--heading)   ;
+}
 
 @media (max-width: 620px) {
     .featured-product-modal {
