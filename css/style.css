@@ -1863,7 +1863,8 @@ select.form-control {
     }
 
     .product-card img {
-        height: 300px;
+        /* height: 300px; */
+        height: 550px;
     }
 
     .business-process,
@@ -3544,4 +3545,9 @@ body.featured-product-modal-open {
 
 .footer-credit a:hover {
     color: #fff;
+}
+
+.list-unstyled{
+    font-weight: bolder;
+    color: var(--heading)   ;
 }

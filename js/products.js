@@ -87,7 +87,7 @@ const products = [
       "Fabric: Amira Gold ",
       "Comfort-Fit Design",
       "Imported Duppata ",
-      "Hendwork Material: Jo With Japan Csut",
+      "HandWork Material: Jo With Japan Cut",
     ],
   },
   {
@@ -495,23 +495,23 @@ const products = [
       "Dupatta: Imported",
     ],
   },
-  {
-    id: 30,
-    name: "AVC-Dubai Abaya ",
-    category: "Bridal-Dubai Abaya",
-    price: 2399,
-    image: "./Product Img/76.26.a.png",
-    imagetwo: "./Clean Img/black1 (3).png",
-    imagethree: "./Clean Img/black1.png",
-    description:
-      "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
-    fabricDetails: [
-      "Luxury Imported Fabric",
-      "Detailed Bridal Finish",
-      "Soft Inner Lining",
-      "Premium Tailoring",
-    ],
-  },
+  // {
+  //   id: 30,
+  //   name: "AVC-Dubai Abaya ",
+  //   category: "Bridal-Dubai Abaya",
+  //   price: 2399,
+  //   image: "./Product Img/76.26.a.png",
+  //   imagetwo: "./Clean Img/black1 (3).png",
+  //   imagethree: "./Clean Img/black1.png",
+  //   description:
+  //     "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+  //   fabricDetails: [
+  //     "Luxury Imported Fabric",
+  //     "Detailed Bridal Finish",
+  //     "Soft Inner Lining",
+  //     "Premium Tailoring",
+  //   ],
+  // },
   {
     id: 31,
     name: "AVC-Dubai Abaya ~",

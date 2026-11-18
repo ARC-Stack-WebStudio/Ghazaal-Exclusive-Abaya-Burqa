@@ -171,8 +171,8 @@ function renderProductDetails() {
         <div class="col-lg-6">${renderProductGallery(product)}</div>
         <div class="col-lg-6">
             ${product.badge ? `<span class="badge bg-warning text-dark mb-3">${product.badge}</span>` : ""}
-            <h1 class="mb-3">${product.name}</h1><h2 style="color:#b18e1e;">${formatPrice(product.price)}</h2>
-            <p>${product.description}</p><hr><h5>Fabric Details</h5><ul>${product.fabricDetails.map(detail => `<li>${detail}</li>`).join("")}</ul><hr>
+            <h1 class="mb-3">${product.name}</h1><h2 style="color:#2E2B2B;">${formatPrice(product.price)}</h2>
+            <p>${product.description}</p><hr><h5>Fabric Details</h5><ul class="list-unstyled">${product.fabricDetails.map(detail => `<li>${detail}</li>`).join("")}</ul><hr>
             <h5>Select Size</h5><div class="mb-4" id="sizeOptions">${["L", "XL", "XXL"].map(size => `<button type="button" class="btn btn-outline-light me-2 mb-2" data-size="${size}">${size}</button>`).join("")}</div>
             <div id="sizeDetails"></div>
             <a id="continueOrder" href="addorder.html?id=${product.id}" class="btn btn-success btn-lg me-3 mt-3"><i class="fas fa-shopping-cart"></i> Continue Order</a>
