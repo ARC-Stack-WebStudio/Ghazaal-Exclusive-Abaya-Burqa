@@ -3592,3 +3592,67 @@ body.featured-product-modal-open {
 .footer-credit a:hover {
     color: #fff;
 }
+
+@media (max-width: 1199px) {
+ .product-filter{
+    justify-content:normal;
+ }
+
+ .customize-cta .btn-customize-whatsapp{
+    margin-bottom: 9px;
+ }
+}
+
+@media (max-width: 991px) {
+ .customize-cta .btn-customize-whatsapp{
+    margin-bottom: 0px;
+ }
+}
+
+@media (max-width: 768px) {
+    #backToTop {
+        bottom: 250px !important;
+        right: 32px !important;
+    }
+}
+
+@media (max-width: 632px) {
+  .footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 548px) {
+    #backToTop {
+        bottom: 250px !important;
+        right: 24px !important;
+    }
+}
+
+@media (max-width:402px) {
+    .navbar-brand {
+        font-size: 22px;
+        align-items: center;
+    }
+}
+
+@media (max-width:372px) {
+    .navbar-brand {
+        font-size: 20px;
+        align-items: center;
+    }
+}
+
+@media (max-width:358px) {
+    .navbar-brand {
+        font-size: 18px;
+        align-items: center;
+    }
+}
+
+@media (min-width: 992px) {
+    #backToTop {
+        bottom: 102px !important;
+    }
+}
