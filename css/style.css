@@ -440,6 +440,10 @@ h6 {
         linear-gradient(135deg, var(--background) 0%, var(--champagne) 52%, var(--white) 100%);
 }
 
+#home {
+    overflow-x: clip;
+}
+
 .contact-section {
     min-height: 40vh;
 }
@@ -2021,6 +2025,13 @@ select.form-control {
     .instagram-float {
         right: 18px;
         bottom: 172px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #about > .container > .row.g-5,
+    #retail-Wholesale > .container > .retail-Wholesale-intro.row {
+        --bs-gutter-x: 1.5rem;
     }
 }
 
