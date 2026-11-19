@@ -1946,6 +1946,11 @@ select.form-control {
         bottom: 18px;
     }
 
+     .instagram-float {
+        width: 56px;
+        height: 56px;
+    }
+
     .product-gallery__arrow {
         width: 42px;
         height: 42px;
@@ -3654,5 +3659,31 @@ body.featured-product-modal-open {
 @media (min-width: 992px) {
     #backToTop {
         bottom: 102px !important;
+    }
+}
+/* Keep the retail image proportional on small screens rather than forcing a tall crop. */
+@media (max-width: 576px) {
+    .retail-Wholesale-image img {
+        min-height: 0;
+        height: auto;
+    }
+
+    .retail-image-note {
+        max-width: min(215px, calc(100% - 32px));
+    }
+
+    .customize-container {
+        gap: 28px;
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .customize-image-wrapper {
+        min-height: 0;
+    }
+
+    .customize-image-wrapper .hero-visual {
+        width: 100%;
+        max-width: none;
     }
 }
