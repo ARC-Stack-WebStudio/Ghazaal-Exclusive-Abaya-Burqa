@@ -339,7 +339,7 @@ const products = [
     fabricDetails: [
       "Model No: GA1012",
       "Fabric: Amira Gold",
-      "Handwork Material: Black Crystal with Pearl Crystal",
+      "Handwork Material: Black Crystal with Poth Crystal",
       "Dupatta: Imported",
     ],
   },
@@ -570,7 +570,7 @@ const products = [
     fabricDetails: [
       "Model No: GA1047",
       "Fabric: Amira Gold Nida",
-      "Handwork Material: Japan Cutdana with Pearl",
+      "Handwork Material: Japan Cutdana with Poth",
       "Dupatta: Imported",
     ],
   },
@@ -585,7 +585,7 @@ const products = [
     fabricDetails: [
       "Model No: GA1048",
       "Fabric: Amira Gold Nida",
-      "Handwork Material: Japan Cutdana with Pearl",
+      "Handwork Material: Japan Cutdana with Poth",
       "Dupatta: Imported",
     ],
   },
@@ -600,7 +600,7 @@ const products = [
     fabricDetails: [
       "Model No: GA1049",
       "Fabric: Amira Gold Nida",
-      "Handwork Material: Japan Cutdana with Pearl",
+      "Handwork Material: Japan Cutdana with Poth",
       "Dupatta: Imported",
     ],
   },
@@ -615,7 +615,7 @@ const products = [
     fabricDetails: [
       "Model No: GA1050",
       "Fabric: Amira Gold Nida",
-      "Handwork Material: Japan Cutdana with Pearl",
+      "Handwork Material: Japan Cutdana with Poth",
       "Dupatta: Imported",
     ],
   }
