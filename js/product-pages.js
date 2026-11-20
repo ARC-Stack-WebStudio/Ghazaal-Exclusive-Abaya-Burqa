@@ -1,11 +1,12 @@
 const PRODUCT_CATEGORIES = [
     "all",
-    "Bridal Abaya",
-    "Bridal-Dubai Abaya",
+    "Regular Abaya",
+    "Dubai Abaya",
     "Party Wear Abaya",
     "Premium Burqa",
-    "Luxury Dubai Abaya"
+    "Imported Dubai Abaya"
 ];
+
 
 function renderProductCard(product) {
     return `
