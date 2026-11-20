@@ -10,7 +10,8 @@
             { label: "Collection", icon: "fa-solid fa-bag-shopping", href: "collection.html", page: "collection.html" },
             { label: "Contact", icon: "fa-solid fa-phone", href: "contact.html", page: "contact.html" },
             { label: "Visit Store", icon: "fa-solid fa-location-dot", href: "https://www.google.com/maps/search/?api=1&query=Ghazaal%20Exclusive%20Abaya%20Bhiwandi", external: true },
-            { label: "WhatsApp", icon: "fa-brands fa-whatsapp", href: "https://wa.me/919769443142", external: true }
+            { label: "WhatsApp", icon: "fa-brands fa-whatsapp", href: "https://wa.me/919769443142", external: true },
+            { label: "Call", icon: "fa-solid fa-phone", href: "tel:+91 75585 24355", external: true }
         ];
         const activeIndex = Math.max(0, links.findIndex((link) => link.page === navigationPage));
         const nav = document.createElement("nav");

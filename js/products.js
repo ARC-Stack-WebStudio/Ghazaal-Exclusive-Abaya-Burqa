@@ -87,7 +87,7 @@ const products = [
       "Fabric: Amira Gold ",
       "Comfort-Fit Design",
       "Imported Duppata ",
-      "Hendwork Material: Jo With Japan Csut",
+      "HandWork Material: Jo With Japan Cut",
     ],
   },
   {
@@ -339,7 +339,7 @@ const products = [
     fabricDetails: [
       "Model No: GA1012",
       "Fabric: Amira Gold",
-      "Handwork Material: Black Crystal with Pearl Crystal",
+      "Handwork Material: Black Crystal with Poth Crystal",
       "Dupatta: Imported",
     ],
   },
@@ -495,23 +495,23 @@ const products = [
       "Dupatta: Imported",
     ],
   },
-  {
-    id: 30,
-    name: "AVC-Dubai Abaya ",
-    category: "Bridal-Dubai Abaya",
-    price: 2399,
-    image: "./Product Img/76.26.a.png",
-    imagetwo: "./Clean Img/black1 (3).png",
-    imagethree: "./Clean Img/black1.png",
-    description:
-      "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
-    fabricDetails: [
-      "Luxury Imported Fabric",
-      "Detailed Bridal Finish",
-      "Soft Inner Lining",
-      "Premium Tailoring",
-    ],
-  },
+  // {
+  //   id: 30,
+  //   name: "AVC-Dubai Abaya ",
+  //   category: "Bridal-Dubai Abaya",
+  //   price: 2399,
+  //   image: "./Product Img/76.26.a.png",
+  //   imagetwo: "./Clean Img/black1 (3).png",
+  //   imagethree: "./Clean Img/black1.png",
+  //   description:
+  //     "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+  //   fabricDetails: [
+  //     "Luxury Imported Fabric",
+  //     "Detailed Bridal Finish",
+  //     "Soft Inner Lining",
+  //     "Premium Tailoring",
+  //   ],
+  // },
   {
     id: 31,
     name: "AVC-Dubai Abaya ~",
@@ -570,7 +570,7 @@ const products = [
     fabricDetails: [
       "Model No: GA1047",
       "Fabric: Amira Gold Nida",
-      "Handwork Material: Japan Cutdana with Pearl",
+      "Handwork Material: Japan Cutdana with Poth",
       "Dupatta: Imported",
     ],
   },
@@ -585,7 +585,7 @@ const products = [
     fabricDetails: [
       "Model No: GA1048",
       "Fabric: Amira Gold Nida",
-      "Handwork Material: Japan Cutdana with Pearl",
+      "Handwork Material: Japan Cutdana with Poth",
       "Dupatta: Imported",
     ],
   },
@@ -600,7 +600,7 @@ const products = [
     fabricDetails: [
       "Model No: GA1049",
       "Fabric: Amira Gold Nida",
-      "Handwork Material: Japan Cutdana with Pearl",
+      "Handwork Material: Japan Cutdana with Poth",
       "Dupatta: Imported",
     ],
   },
@@ -615,7 +615,7 @@ const products = [
     fabricDetails: [
       "Model No: GA1050",
       "Fabric: Amira Gold Nida",
-      "Handwork Material: Japan Cutdana with Pearl",
+      "Handwork Material: Japan Cutdana with Poth",
       "Dupatta: Imported",
     ],
   }
