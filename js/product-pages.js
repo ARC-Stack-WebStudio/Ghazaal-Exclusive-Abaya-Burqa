@@ -1,7 +1,7 @@
 const PRODUCT_CATEGORIES = [
     "all",
     "Regular Abaya",
-    "Dubai Abaya",
+    // "Dubai Abaya",
     "Party Wear Abaya",
     "Premium Burqa",
     "Imported Dubai Abaya"
