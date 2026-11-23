@@ -618,7 +618,158 @@ const products = [
       "Handwork Material: Japan Cutdana with Poth",
       "Dupatta: Imported",
     ],
-  }
+  },
+  {
+    id:  38,
+    name: "AVC-Dubai Abaya ~",
+    category: "Party Wear",
+    price: 6200,
+    image: "./Product Img/Model no-GA1051.png",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1051",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana with Pearl",
+      "Dupatta: Imported",
+    ],
+    },
+     {
+    id:  39,
+    name: "AVC-Dubai Abaya ~",
+    category: "Premium Abaya",
+    price: 5550,
+    image: "./Product Img/Model no-GA1052.png",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1052",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana",
+      "Dupatta: Imported",
+    ],
+    },
+     {
+    id:  40,
+    name: "Party Wear Abaya ~",
+    category: "Party Wear Abaya",
+    price: 4800,
+    image: "./Product Img/Model no-GA1053.png",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1053",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana",
+      "Dupatta: Imported",
+    ],
+    },
+    {
+    id:  41,
+    name: "Premium Abaya ~",
+    category: "Premium Abaya",
+    price: 8800,
+    image: "./Product Img/Model no-GA1054.png",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1054",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana & Embroidery Tissue Work",
+      "Dupatta: Imported",
+    ],
+    },
+     {
+    id:  42,
+    name: "Premium Abaya ~",
+    category: "Premium Abaya",
+    price: 5750,
+    image: "./Product Img/Model no-GA1055.png",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1055",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana With Black Crystal",
+      "Dupatta: Imported",
+    ],
+    },
+     {
+    id:  43,
+    name: "Party Wear Abaya ~",
+    category: "Party Wear Abaya",
+    price: 6550,
+    image: "./Product Img/Model no-GA1056.png",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1056",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana & Embroidery Tissue Work & Cutwork",
+      "Dupatta: Imported",
+    ],
+    },
+     {
+    id:  44,
+    name: "Premium Abaya ~",
+    category: "Premium Abaya",
+    price: 5850,
+    image: "./Product Img/Model no-GA1059.png",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1059",
+      "Fabric: Imported Z-Black Velvet",
+      "Handwork Material: Japan Cutdana",
+      "Dupatta: Imported",
+    ],
+    },
+     {
+    id:  45,
+    name: "Party Wear Abaya ~",
+    category: "Party Wear Abaya",
+    price: 5850,
+    image: "./Product Img/Model no-GA1046.png",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1046",
+      "Fabric: Amira Gold Nida",
+      "Handwork Material: Japan Cutdana",
+      "Dupatta: Imported",
+    ],
+    },
+     {
+    id:  47,
+    name: "Party Wear Abaya ~",
+    category: "Party Wear Abaya",
+    price: 8250,
+    image: "./Product Img/Model no-GA1057.png",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1057",
+      "Fabric: Amira Gold Nida with Ferrari",
+      "Style: Jacket with Inner",
+      "Handwork Material: Japan Cutdana & Kasab Work",
+      "Dupatta: Imported",
+    ],
+    },
+     {
+    id:  48,
+    name: "Imported Dubai Abaya ~",
+    category: "Imported Dubai Abaya",
+    price: 4200,
+    image: "./Product Img/Model no-GA1058.png",
+    description:        
+"A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
+    fabricDetails: [
+      "Model No: GA1058",
+      "Fabric: Imported Velvet",
+      "Stonework: YHB Stone (6 No.)",
+      "Dupatta: Imported",
+    ],
+    },
 ];
 
 const whatsappNumber = "919769443142";
