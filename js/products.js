@@ -684,7 +684,7 @@ const products = [
     name: "Premium Abaya ~",
     category: "Premium Abaya",
     price: 5750,
-    image: "./Product Img/Model no-GA1055.png",
+    image: "./Product Img/Model no-GA1055.jpeg",
     description:        
 "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
     fabricDetails: [
@@ -699,7 +699,7 @@ const products = [
     name: "Party Wear Abaya ~",
     category: "Party Wear Abaya",
     price: 6550,
-    image: "./Product Img/Model no-GA1056.png",
+    image: "./Product Img/Model no-GA1056.jpeg",
     description:        
 "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
     fabricDetails: [
@@ -714,7 +714,7 @@ const products = [
     name: "Premium Abaya ~",
     category: "Premium Abaya",
     price: 5850,
-    image: "./Product Img/Model no-GA1059.png",
+    image: "./Product Img/Model no-GA1059.jpeg",
     description:        
 "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
     fabricDetails: [
@@ -744,7 +744,7 @@ const products = [
     name: "Party Wear Abaya ~",
     category: "Party Wear Abaya",
     price: 8250,
-    image: "./Product Img/Model no-GA1057.png",
+    image: "./Product Img/Model no-GA1057.jpeg",
     description:        
 "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
     fabricDetails: [
@@ -760,7 +760,7 @@ const products = [
     name: "Imported Dubai Abaya ~",
     category: "Imported Dubai Abaya",
     price: 4200,
-    image: "./Product Img/Model no-GA1058.png",
+    image: "./Product Img/Model no-GA1058.jpeg",
     description:        
 "A luxurious bridal Abaya designed with timeless elegance, intricate finishing and a graceful drape for your memorable occasions.",
     fabricDetails: [
